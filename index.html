@@ -62,7 +62,7 @@
     opacity:.16;
     filter:saturate(1.2);
   }
-  /* —— 原有生命科学元素 —— */
+  /* —— 生命科学类 —— */
   .bg-deco .dna1{top:8%;left:3%;width:120px;animation:floatY 14s ease-in-out infinite;}
   .bg-deco .dna2{bottom:12%;right:4%;width:140px;animation:floatY 18s ease-in-out infinite reverse;}
   .bg-deco .mol1{top:32%;right:6%;width:100px;animation:floatY 16s ease-in-out infinite;}
@@ -72,7 +72,7 @@
   .bg-deco .img1{bottom:6%;left:45%;width:90px;animation:floatY 19s ease-in-out infinite;}
   .bg-deco .pro1{top:45%;right:2%;width:100px;animation:floatY 22s ease-in-out infinite reverse;}
 
-  /* —— 新增临床医学 / AI 交叉元素 —— */
+  /* —— 临床医学 / AI 交叉类 —— */
   .bg-deco .ecg1{top:3%;left:40%;width:150px;animation:floatY 16s ease-in-out infinite;}
   .bg-deco .cross1{top:25%;left:2%;width:70px;animation:floatY 14s ease-in-out infinite reverse;}
   .bg-deco .brain1{top:18%;right:14%;width:110px;animation:floatY 20s ease-in-out infinite;}
@@ -82,12 +82,19 @@
   .bg-deco .chip1{top:48%;left:4%;width:90px;animation:floatY 19s ease-in-out infinite;}
   .bg-deco .steth1{bottom:42%;right:6%;width:90px;animation:floatY 21s ease-in-out infinite reverse;}
 
+  /* —— 新增交叉研究主题元素 —— */
+  .bg-deco .biograph{top:70%;right:18%;width:130px;animation:floatY 19s ease-in-out infinite;}
+  .bg-deco .spatial{top:7%;left:52%;width:120px;animation:floatY 17s ease-in-out infinite reverse;}
+  .bg-deco .drug{bottom:28%;right:25%;width:110px;animation:floatY 20s ease-in-out infinite;}
+  .bg-deco .cell{bottom:38%;left:20%;width:120px;animation:floatY 22s ease-in-out infinite reverse;}
+  .bg-deco .deepai{top:88%;left:30%;width:140px;animation:floatY 18s ease-in-out infinite;}
+
   @keyframes floatY{
     0%,100%{transform:translateY(0) rotate(0deg);}
     50%{transform:translateY(-22px) rotate(6deg);}
   }
 
-  /* ===== 左右侧边装饰竖条（神经网络 + 医疗十字混合）===== */
+  /* ===== 左右侧边装饰竖条 ===== */
   .side-deco{
     position:fixed;
     top:0;bottom:0;
@@ -111,7 +118,6 @@
   }
   .side-deco .node:nth-child(4n+3){animation-delay:.6s;background:var(--grad-accent);box-shadow:0 0 0 4px rgba(236,64,122,.12);}
   .side-deco .node:nth-child(4n+5){animation-delay:1.2s;background:var(--grad-service);box-shadow:0 0 0 4px rgba(0,191,165,.12);}
-  /* 侧边小十字 */
   .side-deco .cross{
     width:14px;height:14px;
     position:relative;
@@ -190,7 +196,6 @@
     position:relative;
     overflow:hidden;
   }
-  /* Profile 顶部：心电脉搏线装饰 */
   .profile .ecg-top{
     position:absolute;
     top:0;left:0;right:0;
@@ -199,11 +204,7 @@
     pointer-events:none;
     overflow:hidden;
   }
-  .profile .ecg-top svg{
-    width:100%;
-    height:36px;
-    display:block;
-  }
+  .profile .ecg-top svg{width:100%;height:36px;display:block;}
   .profile::before{
     content:"";
     position:absolute;
@@ -261,7 +262,6 @@
     text-decoration:none;
   }
 
-  /* 研究方向条目 */
   .topic-list{
     list-style:none;
     padding:0;
@@ -447,7 +447,6 @@
   .pub-group.open .pub-group-head{
     background:linear-gradient(90deg,#f2f8ff 0%,#ffffff 60%);
   }
-
   .g-dot{
     width:12px;height:12px;
     border-radius:50%;
@@ -480,7 +479,6 @@
     color:var(--accent3);
     background:rgba(236,64,122,.08);
   }
-
   .pub-group-body{
     max-height:0;
     overflow:hidden;
@@ -492,28 +490,14 @@
     max-height:9000px;
     padding:10px 22px 20px 22px;
   }
-
-  /* Funding 特殊配色 */
-  .pub-group[data-year="funding"] .g-dot{
-    background:var(--grad-gold);
-    box-shadow:0 0 0 4px rgba(255,179,0,.18);
-  }
+  .pub-group[data-year="funding"] .g-dot{background:var(--grad-gold);box-shadow:0 0 0 4px rgba(255,179,0,.18);}
   .pub-group[data-year="funding"] .g-year{color:#b26a00;}
   .pub-group[data-year="funding"] .pub-group-head::before{background:var(--grad-gold);}
-  .pub-group[data-year="funding"].open .pub-group-head{
-    background:linear-gradient(90deg,#fff9ef,#ffffff 60%);
-  }
-
-  /* Service 特殊配色 */
-  .pub-group[data-year="service"] .g-dot{
-    background:var(--grad-service);
-    box-shadow:0 0 0 4px rgba(0,191,165,.18);
-  }
+  .pub-group[data-year="funding"].open .pub-group-head{background:linear-gradient(90deg,#fff9ef,#ffffff 60%);}
+  .pub-group[data-year="service"] .g-dot{background:var(--grad-service);box-shadow:0 0 0 4px rgba(0,191,165,.18);}
   .pub-group[data-year="service"] .g-year{color:#00897b;}
   .pub-group[data-year="service"] .pub-group-head::before{background:var(--grad-service);}
-  .pub-group[data-year="service"].open .pub-group-head{
-    background:linear-gradient(90deg,#f0fffb,#ffffff 60%);
-  }
+  .pub-group[data-year="service"].open .pub-group-head{background:linear-gradient(90deg,#f0fffb,#ffffff 60%);}
 
   /* ===== Publication Items ===== */
   .pub-item{
@@ -540,15 +524,10 @@
   .pub-item.review{border-left-color:var(--accent4);}
   .pub-item .me{color:var(--primary);font-weight:800;}
   .pub-item .title{color:#111;font-weight:600;}
-  .pub-item .venue{
-    color:var(--accent2);
-    font-style:italic;
-    font-weight:600;
-  }
+  .pub-item .venue{color:var(--accent2);font-style:italic;font-weight:600;}
   .pub-item.journal .venue{color:var(--primary-light);}
   .pub-item.chinese .venue{color:var(--accent5);}
   .pub-item .vol{color:#7a8aa3;font-size:13.5px;}
-
   .badge{
     display:inline-block;
     font-size:11px;
@@ -569,15 +548,13 @@
   /* ===== Scroll to top ===== */
   #back-top{
     position:fixed;
-    right:26px;
-    bottom:26px;
+    right:26px;bottom:26px;
     width:48px;height:48px;
     border-radius:50%;
     background:var(--grad-main);
     color:#fff;
     display:none;
-    align-items:center;
-    justify-content:center;
+    align-items:center;justify-content:center;
     cursor:pointer;
     box-shadow:0 8px 22px rgba(26,35,126,.35);
     transition:all .3s;
@@ -585,21 +562,11 @@
     font-size:20px;
     border:none;
   }
-  #back-top:hover{
-    transform:translateY(-4px) scale(1.08);
-    box-shadow:0 14px 28px rgba(26,35,126,.45);
-  }
+  #back-top:hover{transform:translateY(-4px) scale(1.08);box-shadow:0 14px 28px rgba(26,35,126,.45);}
 
   /* ===== Fade-in on scroll ===== */
-  .fade-in{
-    opacity:0;
-    transform:translateY(24px);
-    transition:opacity .7s ease,transform .7s ease;
-  }
-  .fade-in.visible{
-    opacity:1;
-    transform:translateY(0);
-  }
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
 
   /* ===== Footer ===== */
   .footer{
@@ -619,11 +586,7 @@
     margin-bottom:14px;
     opacity:.75;
   }
-  .footer .chain .c{
-    width:8px;height:8px;
-    border-radius:50%;
-    background:var(--grad-main);
-  }
+  .footer .chain .c{width:8px;height:8px;border-radius:50%;background:var(--grad-main);}
   .footer .chain .c:nth-child(2){background:var(--grad-accent);}
   .footer .chain .c:nth-child(3){background:var(--grad-service);}
   .footer .chain .c:nth-child(4){background:var(--grad-gold);}
@@ -641,17 +604,9 @@
   }
   .footer .chain .cross::before{left:5px;top:0;width:4px;height:14px;}
   .footer .chain .cross::after{top:5px;left:0;width:14px;height:4px;}
-  .footer .ecg-line{
-    max-width:520px;
-    margin:0 auto 14px;
-    opacity:.6;
-  }
+  .footer .ecg-line{max-width:520px;margin:0 auto 14px;opacity:.6;}
   .footer .ecg-line svg{width:100%;height:26px;display:block;}
-  .footer .heart{
-    color:var(--accent3);
-    animation:pulse 1.5s infinite;
-    display:inline-block;
-  }
+  .footer .heart{color:var(--accent3);animation:pulse 1.5s infinite;display:inline-block;}
   @keyframes pulse{
     0%,100%{opacity:1;transform:scale(1);}
     50%{opacity:.55;transform:scale(1.25);}
@@ -674,7 +629,7 @@
 </head>
 <body>
 
-<!-- ===== 背景漂浮装饰：生命科学 + AI + 临床医学 ===== -->
+<!-- ===== 背景漂浮装饰：生命科学 + AI + 临床医学 + 交叉研究主题 ===== -->
 <div class="bg-deco" aria-hidden="true">
 
   <!-- ===== 生命科学类 ===== -->
@@ -767,21 +722,17 @@
     <line x1="75" y1="35" x2="90" y2="70" stroke="#ec407a" stroke-width="2"/>
   </svg>
 
-  <!-- ===== 临床医学 / AI 交叉新增元素 ===== -->
-
-  <!-- 心电波形（ECG） -->
+  <!-- ===== 临床医学 / AI 交叉类 ===== -->
   <svg class="ecg1" viewBox="0 0 200 60" fill="none">
     <path d="M0 30 L40 30 L50 30 L55 15 L65 45 L75 10 L85 50 L95 30 L120 30 L130 30 L135 18 L145 42 L155 30 L200 30"
           stroke="#ec407a" stroke-width="2.5" fill="none" stroke-linejoin="round" stroke-linecap="round"/>
   </svg>
 
-  <!-- 医疗十字 -->
   <svg class="cross1" viewBox="0 0 100 100" fill="none">
     <rect x="35" y="15" width="30" height="70" rx="8" fill="#00bfa5"/>
     <rect x="15" y="35" width="70" height="30" rx="8" fill="#00bfa5"/>
   </svg>
 
-  <!-- 脑-AI 神经网络 -->
   <svg class="brain1" viewBox="0 0 100 100" fill="none">
     <path d="M30 30 Q20 30 20 45 Q15 50 20 60 Q15 70 30 75 Q35 85 50 80 Q65 85 70 75 Q85 70 80 60 Q85 50 80 45 Q80 30 70 30 Q65 20 50 25 Q35 20 30 30 Z"
           stroke="#7b1fa2" stroke-width="2" fill="none"/>
@@ -793,7 +744,6 @@
     <line x1="60" y1="45" x2="50" y2="60" stroke="#7b1fa2" stroke-width="1.5"/>
   </svg>
 
-  <!-- 胶囊药丸 -->
   <svg class="pill1" viewBox="0 0 100 100" fill="none">
     <g transform="rotate(45 50 50)">
       <rect x="20" y="35" width="60" height="30" rx="15" fill="#3949ab"/>
@@ -802,7 +752,6 @@
     </g>
   </svg>
 
-  <!-- 显微镜 -->
   <svg class="micro1" viewBox="0 0 100 100" fill="none">
     <rect x="45" y="20" width="14" height="45" rx="4" fill="#00bfa5"/>
     <ellipse cx="52" cy="18" rx="12" ry="5" fill="#3949ab"/>
@@ -811,7 +760,6 @@
     <circle cx="52" cy="52" r="5" fill="#ec407a"/>
   </svg>
 
-  <!-- 病毒 / 细胞 -->
   <svg class="virus1" viewBox="0 0 100 100" fill="none">
     <circle cx="50" cy="50" r="20" stroke="#7b1fa2" stroke-width="2.5" fill="none"/>
     <circle cx="50" cy="50" r="8" fill="#ec407a"/>
@@ -825,7 +773,6 @@
     <line x1="64" y1="64" x2="71" y2="71" stroke="#7b1fa2" stroke-width="2" stroke-linecap="round"/>
   </svg>
 
-  <!-- AI 芯片 -->
   <svg class="chip1" viewBox="0 0 100 100" fill="none">
     <rect x="25" y="25" width="50" height="50" rx="8" fill="none" stroke="#3949ab" stroke-width="2.5"/>
     <rect x="40" y="40" width="20" height="20" rx="3" fill="#00bfa5"/>
@@ -837,7 +784,6 @@
     <line x1="65" y1="25" x2="65" y2="15" stroke="#ec407a" stroke-width="2"/>
   </svg>
 
-  <!-- 听诊器 -->
   <svg class="steth1" viewBox="0 0 100 100" fill="none">
     <path d="M25 15 Q25 42 50 42 Q75 42 75 15" stroke="#ec407a" stroke-width="3" fill="none" stroke-linecap="round"/>
     <circle cx="25" cy="15" r="3" fill="#ec407a"/>
@@ -845,6 +791,94 @@
     <path d="M50 42 L50 55" stroke="#ec407a" stroke-width="3" stroke-linecap="round"/>
     <circle cx="50" cy="65" r="10" fill="none" stroke="#00bfa5" stroke-width="3"/>
     <circle cx="50" cy="65" r="4" fill="#00bfa5"/>
+  </svg>
+
+  <!-- ===== 新增：复杂生物网络（多节点环状网络） ===== -->
+  <svg class="biograph" viewBox="0 0 120 120" fill="none">
+    <circle cx="60" cy="20" r="6" fill="#3949ab"/>
+    <circle cx="100" cy="45" r="6" fill="#00bfa5"/>
+    <circle cx="90" cy="90" r="6" fill="#7b1fa2"/>
+    <circle cx="40" cy="100" r="6" fill="#ec407a"/>
+    <circle cx="15" cy="55" r="6" fill="#ffb300"/>
+    <circle cx="60" cy="60" r="7" fill="#00bfa5"/>
+    <line x1="60" y1="20" x2="100" y2="45" stroke="#3949ab" stroke-width="1.5"/>
+    <line x1="60" y1="20" x2="15" y2="55" stroke="#3949ab" stroke-width="1.5"/>
+    <line x1="100" y1="45" x2="90" y2="90" stroke="#00bfa5" stroke-width="1.5"/>
+    <line x1="90" y1="90" x2="40" y2="100" stroke="#7b1fa2" stroke-width="1.5"/>
+    <line x1="40" y1="100" x2="15" y2="55" stroke="#ec407a" stroke-width="1.5"/>
+    <line x1="60" y1="60" x2="60" y2="20" stroke="#00bfa5" stroke-width="1.5"/>
+    <line x1="60" y1="60" x2="100" y2="45" stroke="#00bfa5" stroke-width="1.5"/>
+    <line x1="60" y1="60" x2="90" y2="90" stroke="#00bfa5" stroke-width="1.5"/>
+    <line x1="60" y1="60" x2="40" y2="100" stroke="#00bfa5" stroke-width="1.5"/>
+    <line x1="60" y1="60" x2="15" y2="55" stroke="#00bfa5" stroke-width="1.5"/>
+  </svg>
+
+  <!-- ===== 新增：空间多组学（组织切片 + 空间位点） ===== -->
+  <svg class="spatial" viewBox="0 0 120 120" fill="none">
+    <path d="M20 20 Q60 10 100 25 Q110 60 95 95 Q60 110 25 100 Q10 60 20 20 Z" stroke="#3949ab" stroke-width="2" fill="none"/>
+    <circle cx="35" cy="35" r="3" fill="#00bfa5"/>
+    <circle cx="55" cy="30" r="3" fill="#7b1fa2"/>
+    <circle cx="75" cy="38" r="3" fill="#00bfa5"/>
+    <circle cx="45" cy="55" r="3" fill="#ec407a"/>
+    <circle cx="65" cy="55" r="3" fill="#00bfa5"/>
+    <circle cx="85" cy="58" r="3" fill="#7b1fa2"/>
+    <circle cx="40" cy="75" r="3" fill="#ffb300"/>
+    <circle cx="60" cy="78" r="3" fill="#00bfa5"/>
+    <circle cx="80" cy="80" r="3" fill="#ec407a"/>
+    <circle cx="55" cy="92" r="3" fill="#7b1fa2"/>
+  </svg>
+
+  <!-- ===== 新增：药物研发（靶蛋白 + 药物分子对接） ===== -->
+  <svg class="drug" viewBox="0 0 120 120" fill="none">
+    <path d="M10 60 Q30 30 60 40 Q90 50 110 60 Q90 90 60 80 Q30 70 10 60 Z" stroke="#7b1fa2" stroke-width="2" fill="none"/>
+    <circle cx="40" cy="60" r="8" fill="#00bfa5"/>
+    <circle cx="60" cy="60" r="8" fill="#ec407a"/>
+    <line x1="48" y1="60" x2="52" y2="60" stroke="#3949ab" stroke-width="2"/>
+    <circle cx="80" cy="55" r="6" fill="#ffb300"/>
+    <line x1="68" y1="60" x2="74" y2="57" stroke="#3949ab" stroke-width="1.5"/>
+    <circle cx="20" cy="55" r="5" fill="#3949ab"/>
+    <line x1="25" y1="57" x2="32" y2="60" stroke="#3949ab" stroke-width="1.5"/>
+  </svg>
+
+  <!-- ===== 新增：虚拟细胞（细胞膜 + 核 + 细胞器） ===== -->
+  <svg class="cell" viewBox="0 0 120 120" fill="none">
+    <ellipse cx="60" cy="60" rx="45" ry="38" stroke="#00bfa5" stroke-width="2.5" fill="none"/>
+    <circle cx="60" cy="60" r="18" stroke="#7b1fa2" stroke-width="2" fill="none"/>
+    <circle cx="60" cy="60" r="8" fill="#7b1fa2"/>
+    <ellipse cx="30" cy="50" rx="8" ry="4" fill="#ec407a"/>
+    <ellipse cx="92" cy="70" rx="8" ry="4" fill="#3949ab"/>
+    <ellipse cx="45" cy="85" rx="7" ry="3" fill="#ffb300"/>
+    <circle cx="85" cy="42" r="4" fill="#00bfa5"/>
+  </svg>
+
+  <!-- ===== 新增：人工智能（多层深度神经网络） ===== -->
+  <svg class="deepai" viewBox="0 0 140 120" fill="none">
+    <circle cx="20" cy="30" r="4" fill="#3949ab"/>
+    <circle cx="20" cy="55" r="4" fill="#3949ab"/>
+    <circle cx="20" cy="80" r="4" fill="#3949ab"/>
+    <circle cx="60" cy="20" r="4" fill="#00bfa5"/>
+    <circle cx="60" cy="45" r="4" fill="#00bfa5"/>
+    <circle cx="60" cy="70" r="4" fill="#00bfa5"/>
+    <circle cx="60" cy="95" r="4" fill="#00bfa5"/>
+    <circle cx="100" cy="35" r="4" fill="#7b1fa2"/>
+    <circle cx="100" cy="60" r="4" fill="#7b1fa2"/>
+    <circle cx="100" cy="85" r="4" fill="#7b1fa2"/>
+    <circle cx="130" cy="55" r="5" fill="#ec407a"/>
+    <line x1="24" y1="30" x2="56" y2="20" stroke="#3949ab" stroke-width="1"/>
+    <line x1="24" y1="30" x2="56" y2="45" stroke="#3949ab" stroke-width="1"/>
+    <line x1="24" y1="55" x2="56" y2="45" stroke="#00bfa5" stroke-width="1"/>
+    <line x1="24" y1="55" x2="56" y2="70" stroke="#00bfa5" stroke-width="1"/>
+    <line x1="24" y1="80" x2="56" y2="70" stroke="#7b1fa2" stroke-width="1"/>
+    <line x1="24" y1="80" x2="56" y2="95" stroke="#7b1fa2" stroke-width="1"/>
+    <line x1="64" y1="20" x2="96" y2="35" stroke="#00bfa5" stroke-width="1"/>
+    <line x1="64" y1="45" x2="96" y2="35" stroke="#00bfa5" stroke-width="1"/>
+    <line x1="64" y1="45" x2="96" y2="60" stroke="#7b1fa2" stroke-width="1"/>
+    <line x1="64" y1="70" x2="96" y2="60" stroke="#7b1fa2" stroke-width="1"/>
+    <line x1="64" y1="70" x2="96" y2="85" stroke="#ec407a" stroke-width="1"/>
+    <line x1="64" y1="95" x2="96" y2="85" stroke="#ec407a" stroke-width="1"/>
+    <line x1="104" y1="35" x2="126" y2="55" stroke="#7b1fa2" stroke-width="1"/>
+    <line x1="104" y1="60" x2="126" y2="55" stroke="#ec407a" stroke-width="1"/>
+    <line x1="104" y1="85" x2="126" y2="55" stroke="#ec407a" stroke-width="1"/>
   </svg>
 
 </div>
@@ -869,7 +903,6 @@
 <div id="container">
   <!-- ===== 1. PROFILE ===== -->
   <div class="profile fade-in">
-    <!-- 顶部心电波形装饰 -->
     <div class="ecg-top" aria-hidden="true">
       <svg viewBox="0 0 1000 40" preserveAspectRatio="none" fill="none">
         <path d="M0 20 L100 20 L110 20 L115 8 L125 32 L135 4 L145 36 L155 20 L200 20 L300 20 L310 20 L315 8 L325 32 L335 4 L345 36 L355 20 L400 20 L500 20 L510 20 L515 8 L525 32 L535 4 L545 36 L555 20 L600 20 L700 20 L710 20 L715 8 L725 32 L735 4 L745 36 L755 20 L800 20 L900 20 L910 20 L915 8 L925 32 L935 4 L945 36 L955 20 L1000 20"
@@ -940,7 +973,6 @@
       <p class="contact-line">Email: guoyanbu#zzuli.edu.cn (guoyanbu#gmail.com)</p>
     </div>
 
-    <!-- Profile 内部右下角装饰：分子 -->
     <svg class="profile-deco" viewBox="0 0 100 100" fill="none" aria-hidden="true">
       <circle cx="20" cy="20" r="6" fill="#00bfa5"/>
       <circle cx="80" cy="30" r="6" fill="#7b1fa2"/>
@@ -1042,7 +1074,6 @@
 
   <div id="pub-list">
 
-    <!-- ===== Under Review ===== -->
     <div class="pub-group" data-year="review">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1061,7 +1092,6 @@
       </div>
     </div>
 
-    <!-- ===== 2026 ===== -->
     <div class="pub-group" data-year="2026">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1086,7 +1116,6 @@
       </div>
     </div>
 
-    <!-- ===== 2025 ===== -->
     <div class="pub-group" data-year="2025">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1103,7 +1132,6 @@
       </div>
     </div>
 
-    <!-- ===== 2024 ===== -->
     <div class="pub-group" data-year="2024">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1117,7 +1145,6 @@
       </div>
     </div>
 
-    <!-- ===== 2023 ===== -->
     <div class="pub-group" data-year="2023">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1132,7 +1159,6 @@
       </div>
     </div>
 
-    <!-- ===== 2022 ===== -->
     <div class="pub-group" data-year="2022">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1148,7 +1174,6 @@
       </div>
     </div>
 
-    <!-- ===== 2021 ===== -->
     <div class="pub-group" data-year="2021">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1163,7 +1188,6 @@
       </div>
     </div>
 
-    <!-- ===== 2020 ===== -->
     <div class="pub-group" data-year="2020">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1177,7 +1201,6 @@
       </div>
     </div>
 
-    <!-- ===== 2019 ===== -->
     <div class="pub-group" data-year="2019">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1189,7 +1212,6 @@
       </div>
     </div>
 
-    <!-- ===== 2018 ===== -->
     <div class="pub-group" data-year="2018">
       <div class="pub-group-head">
         <span class="g-dot"></span>
@@ -1236,7 +1258,6 @@
 
   <!-- ===== FOOTER ===== -->
   <div class="footer">
-    <!-- 心电脉搏线 -->
     <div class="ecg-line" aria-hidden="true">
       <svg viewBox="0 0 600 30" preserveAspectRatio="none" fill="none">
         <path d="M0 15 L60 15 L70 15 L75 4 L85 26 L95 0 L105 30 L115 15 L150 15 L250 15 L260 15 L265 4 L275 26 L285 0 L295 30 L305 15 L340 15 L420 15 L430 15 L435 4 L445 26 L455 0 L465 30 L475 15 L600 15"
@@ -1244,7 +1265,6 @@
       </svg>
     </div>
 
-    <!-- 分子链 + 医疗十字 -->
     <div class="chain" aria-hidden="true">
       <span class="c"></span><span class="c"></span>
       <span class="cross"></span>
@@ -1257,18 +1277,15 @@
 
 </div>
 
-<!-- Back to top -->
 <button id="back-top" title="Back to top">↑</button>
 
 <script>
-/* ===== 统一控制分组的展开/收起状态 ===== */
 function setGroupOpen(group, open){
   const arrow = group.querySelector('.g-arrow');
   group.classList.toggle('open', open);
   if (arrow) arrow.textContent = open ? '收起 ▴' : '展开 ▾';
 }
 
-/* ===== 分组点击折叠 ===== */
 document.querySelectorAll('.pub-group').forEach(group => {
   const head = group.querySelector('.pub-group-head');
   if (!head) return;
@@ -1277,7 +1294,6 @@ document.querySelectorAll('.pub-group').forEach(group => {
   });
 });
 
-/* ===== 类型筛选（统一处理论文 / 项目 / 服务） ===== */
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -1316,7 +1332,6 @@ filterBtns.forEach(btn => {
   });
 });
 
-/* ===== 返回顶部 ===== */
 const backTop = document.getElementById('back-top');
 window.addEventListener('scroll', () => {
   backTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
@@ -1325,7 +1340,6 @@ backTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* ===== 滚动淡入 ===== */
 const fadeEls = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
