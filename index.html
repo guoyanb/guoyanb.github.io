@@ -1,483 +1,804 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanbu Guo | Homepage</title>
-  <style>
-    /* ================= 基础全局样式（极简学术风） ================= */
-    :root {
-      --primary: #0b3d91;
-      --primary-light: #1565c0;
-      --accent: #00acc1;
-      --accent2: #7b1fa2;
-      --accent3: #e91e63;
-      --accent4: #ff9800;
-      --accent5: #4caf50;
-      --bg: #f5f8fd;
-      --card: #ffffff;
-      --text: #333;
-      --muted: #555;
-      --border: #e0e8f5;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: Arial, "Helvetica Neue", Helvetica, "Microsoft YaHei", sans-serif;
-      background: #ffffff;
-      color: var(--text);
-      line-height: 1.6;
-      font-size: 15px;
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-    a { color: #0000EE; text-decoration: none; transition: color .3s; }
-    a:hover { text-decoration: underline; }
+<meta name="robots" content="index, follow" />
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="keywords" content="Yanbu Guo, College of Software Engineering, Zhengzhou University of Light Industry, Neural Networks, Biomedical Informatics and Image Processing">
+<link rel="shortcut icon" href="./files/xh1.jpg">
+<title>Yanbu Guo | Homepage</title>
+<style>
+  :root{
+    --primary:#0b3d91;
+    --primary-light:#1565c0;
+    --accent:#00acc1;
+    --accent2:#7b1fa2;
+    --accent3:#e91e63;
+    --accent4:#ff9800;
+    --accent5:#4caf50;
+    --gold:#f0b400;
+    --bg:#f5f8fd;
+    --card:#ffffff;
+    --text:#222;
+    --muted:#555;
+    --border:#e0e8f5;
+    --review-color:#e65100;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"Segoe UI","Helvetica Neue",Arial,"Microsoft YaHei",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    font-size:15px;
+    overflow-x:hidden;
+  }
+  a{color:var(--primary-light);text-decoration:none;transition:all .3s;}
+  a:hover{color:var(--accent3);text-decoration:underline;}
 
-    /* ================= 头部区域（仿图1经典排版） ================= */
-    .header-section {
-      display: flex;
-      gap: 35px;
-      align-items: flex-start;
-      margin-bottom: 35px;
-    }
-    .header-section img {
-      width: 200px;
-      height: 260px;
-      object-fit: cover;
-      border: 1px solid #ddd;
-      flex-shrink: 0;
-    }
-    .header-info {
-      flex: 1;
-      padding-top: 5px;
-    }
-    .header-info h1 {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 34px;
-      font-weight: bold;
-      color: #111;
-      margin-bottom: 2px;
-    }
-    .header-info .signature {
-      font-family: "KaiTi", "STKaiti", "楷体", serif;
-      font-size: 28px;
-      color: #222;
-      margin-bottom: 15px;
-    }
-    .header-info .title {
-      font-weight: bold;
-      font-size: 17px;
-      color: #111;
-      margin-bottom: 15px;
-    }
-    .header-info .affiliation {
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
-    .header-info .affiliation a {
-      color: #551A8B; /* 模仿图1的紫色链接 */
-    }
-    .header-info .contact-info {
-      margin-bottom: 15px;
-      line-height: 1.5;
-    }
+  #container{max-width:1000px;margin:0 auto;padding:0 18px 60px;}
 
-    /* ================= 简介区域（仿图1长段文字排版） ================= */
-    .bio-section {
-      font-size: 15.5px;
-      line-height: 1.8;
-      text-align: justify;
-      margin-bottom: 40px;
-    }
-    .bio-section p {
-      margin-bottom: 15px;
-    }
-    /* 红色高亮招生信息 */
-    .recruiting {
-      color: #d32f2f;
-      font-weight: bold;
-    }
+  /* ===== Animated Gradient Header ===== */
+  .header{
+    background:linear-gradient(135deg,#0b3d91,#1565c0,#00acc1,#7b1fa2);
+    background-size:400% 400%;
+    animation:gradientShift 14s ease infinite;
+    color:#fff;
+    border-radius:0 0 22px 22px;
+    padding:34px 36px 28px;
+    box-shadow:0 10px 30px rgba(11,61,145,.3);
+    margin-bottom:26px;
+    position:relative;
+    overflow:hidden;
+  }
+  .header::before{
+    content:"";
+    position:absolute;
+    top:-60px;right:-60px;
+    width:220px;height:220px;
+    background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);
+    border-radius:50%;
+    animation:float 8s ease-in-out infinite;
+  }
+  .header::after{
+    content:"";
+    position:absolute;
+    bottom:-80px;left:-40px;
+    width:180px;height:180px;
+    background:radial-gradient(circle,rgba(0,172,193,.28),transparent 70%);
+    border-radius:50%;
+    animation:float 10s ease-in-out infinite reverse;
+  }
+  @keyframes gradientShift{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+  }
+  @keyframes float{
+    0%,100%{transform:translateY(0) scale(1);}
+    50%{transform:translateY(-18px) scale(1.08);}
+  }
+  .header h1{
+    margin:0;
+    font-size:30px;
+    letter-spacing:.6px;
+    color:#fff;
+    position:relative;
+    z-index:2;
+    text-shadow:0 2px 8px rgba(0,0,0,.2);
+  }
+  .header h1 a{color:#fff;}
+  .header .subtitle{
+    font-size:14.5px;
+    opacity:.95;
+    margin-top:6px;
+    position:relative;
+    z-index:2;
+  }
 
-    /* ================= 保留原有卡片样式（项目、论文、服务） ================= */
-    h2 {
-      font-size: 21px; color: var(--primary);
-      border-left: 5px solid var(--accent); padding-left: 12px;
-      margin: 35px 0 18px;
-    }
-    h2::after {
-      content: ""; display: block; height: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent 80%);
-      margin-top: 8px; border-radius: 2px;
-    }
-    .funding-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
-    .funding-card {
-      background: linear-gradient(135deg, #fffdf5, #ffffff);
-      border: 1px solid #f0e6c8; border-left: 5px solid #f0b400;
-      border-radius: 12px; padding: 16px 20px; transition: all .3s;
-    }
-    .funding-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(240, 180, 0, 0.2); }
-    .f-title { font-weight: 700; color: var(--primary); }
-    .f-role {
-      display: inline-block; background: linear-gradient(135deg, #ff9800, #e65100);
-      color: #fff; font-size: 12px; font-weight: 700; padding: 2px 10px;
-      border-radius: 10px; margin-left: 8px; vertical-align: middle;
-    }
-    .f-sub { display: block; font-size: 14.5px; color: #333; margin-top: 6px; }
-    
-    .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px; }
-    .filter-btn {
-      background: var(--card); border: 1.5px solid var(--border);
-      color: var(--muted); padding: 5px 15px; border-radius: 20px;
-      font-size: 13.5px; cursor: pointer; transition: all .3s; font-weight: 600;
-    }
-    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
-    .filter-btn.active {
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff; border-color: transparent;
-    }
-    .pub-group {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 12px; margin-bottom: 10px; overflow: hidden;
-      transition: box-shadow .3s;
-    }
-    .pub-group:hover { box-shadow: 0 4px 16px rgba(11, 61, 145, 0.08); }
-    .pub-group-head {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 20px; cursor: pointer; user-select: none;
-      transition: background .3s;
-    }
-    .pub-group.open .pub-group-head { background: #f2f8ff; }
-    .g-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      box-shadow: 0 0 0 4px rgba(0, 172, 193, 0.15);
-    }
-    .pub-group.open .g-dot { background: linear-gradient(135deg, var(--accent3), var(--accent4)); }
-    .g-year { font-size: 18px; font-weight: 800; color: var(--primary); }
-    .g-arrow { margin-left: auto; font-size: 13px; font-weight: 700; color: var(--accent); }
-    .pub-group-body {
-      display: grid; grid-template-rows: 0fr; transition: grid-template-rows .4s ease;
-      padding: 0 20px; background: linear-gradient(180deg, #fafdff, #ffffff);
-    }
-    .pub-group-body > div { overflow: hidden; }
-    .pub-group.open .pub-group-body { grid-template-rows: 1fr; padding-bottom: 16px; }
-    .pub-item {
-      background: var(--card); border: 1px solid var(--border);
-      border-left: 4px solid var(--accent); border-radius: 8px;
-      padding: 12px 16px; margin-bottom: 8px; font-size: 14px;
-      transition: all .3s;
-    }
-    .pub-item:hover { transform: translateX(4px); box-shadow: 0 4px 14px rgba(11, 61, 145, 0.1); }
-    .pub-item.journal { border-left-color: var(--primary-light); }
-    .pub-item.conference { border-left-color: var(--accent2); }
-    .pub-item.chinese { border-left-color: var(--accent5); }
-    .pub-item.review { border-left-color: var(--accent4); }
-    .pub-item .me { color: var(--primary); font-weight: 700; }
-    .pub-item .title { color: #111; font-weight: 600; }
-    .pub-item .venue { color: var(--accent2); font-style: italic; font-weight: 600; }
-    .pub-item.journal .venue { color: var(--primary-light); }
-    .pub-item.chinese .venue { color: var(--accent5); }
-    .badge {
-      display: inline-block; font-size: 11px; font-weight: 700;
-      padding: 2px 8px; border-radius: 8px; margin-right: 6px; vertical-align: middle;
-    }
-    .badge.j { background: #e3f2fd; color: #0b3d91; }
-    .badge.c { background: #f3e5f5; color: #7b1fa2; }
-    .badge.cn { background: #e8f5e9; color: #2e7d32; }
-    .badge.r { background: #fff3e0; color: #e65100; }
-    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
-    .service-card {
-      background: var(--card); border: 1px solid var(--border);
-      border-top: 4px solid var(--accent); border-radius: 10px;
-      padding: 14px 18px; font-size: 14.5px; transition: all .3s;
-    }
-    .service-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0, 172, 193, 0.15); }
-    .service-card:nth-child(2) { border-top-color: var(--accent2); }
-    .service-card:nth-child(3) { border-top-color: var(--accent3); }
-    .service-card:nth-child(4) { border-top-color: var(--accent4); }
-    .service-card:nth-child(5) { border-top-color: var(--accent5); }
-    .s-icon { margin-right: 6px; }
-    .footer { text-align: center; color: #888; font-size: 13px; margin-top: 40px; padding-top: 20px; border-top: 2px solid var(--border); }
-    #back-top {
-      position: fixed; right: 20px; bottom: 20px; width: 42px; height: 42px;
-      border-radius: 50%; background: linear-gradient(135deg, var(--primary), var(--accent));
-      color: #fff; display: none; align-items: center; justify-content: center;
-      cursor: pointer; box-shadow: 0 4px 14px rgba(11, 61, 145, 0.3);
-      z-index: 99; font-size: 18px; border: none; transition: transform .3s;
-    }
-    #back-top:hover { transform: translateY(-3px) scale(1.05); }
+  /* ===== Sections ===== */
+  h2{
+    font-size:22px;
+    color:var(--primary);
+    border-left:6px solid var(--accent);
+    padding-left:14px;
+    margin:42px 0 20px;
+    letter-spacing:.3px;
+    position:relative;
+  }
+  h2::after{
+    content:"";
+    display:block;
+    height:3px;
+    background:linear-gradient(90deg,var(--accent) 0%,var(--accent2) 40%,transparent 80%);
+    margin-top:9px;
+    border-radius:3px;
+  }
 
-    /* ================= 响应式 ================= */
-    @media (max-width: 640px) {
-      .header-section { flex-direction: column; align-items: center; text-align: center; }
-      .header-info h1, .header-info .signature { text-align: center; }
-      .header-info .affiliation, .header-info .contact-info { text-align: center; }
-      .bio-section { text-align: left; }
-      body { padding: 20px 15px; }
-    }
-  </style>
+  /* ===== Profile (经典学术主页布局) ===== */
+  .profile{
+    display:flex;
+    gap:26px;
+    align-items:flex-start;
+    background:var(--card);
+    border-radius:14px;
+    padding:24px;
+    box-shadow:0 4px 18px rgba(11,61,145,.08);
+    border:1px solid var(--border);
+  }
+  .profile img{
+    width:180px;
+    height:auto;
+    flex-shrink:0;
+    border-radius:8px;
+    border:1px solid var(--border);
+    transition:transform .4s;
+  }
+  .profile img:hover{transform:scale(1.02);}
+  .profile .bio{font-size:15px;}
+  .profile .bio .name-link{
+    color:#0000EE;
+    font-weight:700;
+    font-size:16.5px;
+  }
+  .profile .bio .name-link:hover{
+    color:var(--accent3);
+    text-decoration:underline;
+  }
+  .topic-list{
+    list-style:disc;
+    padding-left:24px;
+    margin:12px 0 10px;
+  }
+  .topic-list li{
+    margin-bottom:6px;
+    line-height:1.55;
+  }
+  .topic-list b{color:#111;}
+  .contact-line{
+    margin:8px 0 6px;
+    font-size:14.5px;
+  }
+  .mini-nav{
+    margin:4px 0 0;
+    font-size:14.5px;
+  }
+  .mini-nav a{
+    color:#0000EE;
+    margin-right:6px;
+  }
+  .mini-nav a:hover{color:var(--accent3);}
+  .mini-nav .sep{color:#999;margin:0 4px;}
+
+  /* ===== Fundings ===== */
+  .funding-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:14px;
+  }
+  .funding-card{
+    background:linear-gradient(135deg,#fffdf5,#ffffff);
+    border:1px solid #f0e6c8;
+    border-left:5px solid var(--gold);
+    border-radius:12px;
+    padding:18px 22px;
+    font-size:15px;
+    transition:all .3s;
+    position:relative;
+    overflow:hidden;
+  }
+  .funding-card::after{
+    content:"";
+    position:absolute;
+    top:-40px;right:-40px;
+    width:110px;height:110px;
+    background:radial-gradient(circle,rgba(240,180,0,.12),transparent 70%);
+    border-radius:50%;
+  }
+  .funding-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 22px rgba(240,180,0,.2);
+    border-left-color:var(--accent4);
+  }
+  .funding-card .f-icon{font-size:22px;margin-right:8px;}
+  .funding-card .f-title{
+    font-weight:700;
+    color:var(--primary);
+    font-size:16px;
+  }
+  .funding-card .f-role{
+    display:inline-block;
+    background:linear-gradient(135deg,#ff9800,#e65100);
+    color:#fff;
+    font-size:12px;
+    font-weight:700;
+    padding:2px 12px;
+    border-radius:10px;
+    margin-left:8px;
+    vertical-align:middle;
+    letter-spacing:.5px;
+    box-shadow:0 2px 6px rgba(230,81,0,.25);
+  }
+  .funding-card .f-sub{
+    display:block;
+    font-size:14.5px;
+    color:#333;
+    margin-top:8px;
+    line-height:1.6;
+    font-weight:500;
+  }
+
+  /* ===== Prospective students ===== */
+  .note{
+    background:linear-gradient(90deg,#e3f2fd,#e0f7fa,#f3e5f5);
+    background-size:200% 100%;
+    animation:noteShift 8s ease infinite;
+    border-left:5px solid var(--accent);
+    border-radius:0 14px 14px 0;
+    padding:18px 22px;
+    font-size:15px;
+    color:#0d47a1;
+    box-shadow:0 3px 12px rgba(0,172,193,.12);
+    transition:transform .3s;
+  }
+  .note:hover{transform:translateX(5px);}
+  @keyframes noteShift{
+    0%,100%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+  }
+
+  /* ===== Publication Filter ===== */
+  .filter-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:16px;
+  }
+  .filter-btn{
+    background:var(--card);
+    border:1.5px solid var(--border);
+    color:var(--muted);
+    padding:6px 16px;
+    border-radius:20px;
+    font-size:13.5px;
+    cursor:pointer;
+    transition:all .28s;
+    font-weight:600;
+  }
+  .filter-btn:hover{border-color:var(--accent);color:var(--accent);}
+  .filter-btn.active{
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:#fff;
+    border-color:transparent;
+    box-shadow:0 4px 12px rgba(11,61,145,.25);
+  }
+
+  /* ===== Publication Year Groups ===== */
+  .pub-group{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:13px;
+    margin-bottom:12px;
+    overflow:hidden;
+    transition:box-shadow .3s, border-color .3s;
+  }
+  .pub-group:hover{box-shadow:0 6px 18px rgba(11,61,145,.1);}
+  .pub-group.open{
+    border-color:#c9dcf5;
+    box-shadow:0 10px 26px rgba(11,61,145,.15);
+  }
+  .pub-group-head{
+    display:flex;
+    align-items:center;
+    gap:13px;
+    padding:15px 22px;
+    cursor:pointer;
+    user-select:none;
+    transition:background .28s;
+    position:relative;
+  }
+  .pub-group-head::before{
+    content:"";
+    position:absolute;
+    left:0;top:0;bottom:0;
+    width:5px;
+    background:linear-gradient(180deg,var(--accent),var(--accent2));
+    transform:scaleY(0);
+    transition:transform .32s;
+  }
+  .pub-group:hover .pub-group-head::before,
+  .pub-group.open .pub-group-head::before{transform:scaleY(1);}
+  .pub-group.open .pub-group-head{background:linear-gradient(90deg,#f2f8ff,#ffffff);}
+
+  .g-dot{
+    width:11px;height:11px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--accent),var(--accent2));
+    box-shadow:0 0 0 4px rgba(0,172,193,.15);
+    flex-shrink:0;
+    transition:all .3s;
+  }
+  .pub-group.open .g-dot{
+    background:linear-gradient(135deg,var(--accent3),var(--accent4));
+    box-shadow:0 0 0 5px rgba(233,30,99,.15);
+  }
+  .g-year{
+    font-size:19px;
+    font-weight:800;
+    color:var(--primary);
+    letter-spacing:.6px;
+  }
+  .g-arrow{
+    margin-left:auto;
+    font-size:13px;
+    font-weight:700;
+    color:var(--accent);
+    transition:color .3s;
+  }
+  .pub-group.open .g-arrow{color:var(--accent3);}
+
+  .pub-group-body{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .55s ease, padding .38s ease;
+    padding:0 22px;
+    background:linear-gradient(180deg,#fafdff,#ffffff);
+  }
+  .pub-group.open .pub-group-body{
+    max-height:9000px;
+    padding:8px 22px 18px 22px;
+  }
+
+  .pub-group[data-year="review"] .g-dot{
+    background:linear-gradient(135deg,var(--accent4),#e65100);
+    box-shadow:0 0 0 4px rgba(255,152,0,.18);
+  }
+  .pub-group[data-year="review"] .g-year{color:var(--review-color);}
+  .pub-group[data-year="review"] .pub-group-head::before{
+    background:linear-gradient(180deg,var(--accent4),#e65100);
+  }
+  .pub-group[data-year="review"].open .pub-group-head{
+    background:linear-gradient(90deg,#fff8f0,#ffffff);
+  }
+
+  /* ===== Publication Items ===== */
+  .pub-item{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-left:4px solid var(--accent);
+    border-radius:10px;
+    padding:12px 18px;
+    margin-bottom:9px;
+    font-size:14.5px;
+    transition:all .28s;
+    position:relative;
+  }
+  .pub-item:hover{
+    border-left-color:var(--accent3);
+    box-shadow:0 6px 18px rgba(11,61,145,.14);
+    transform:translateX(6px);
+  }
+  .pub-item.journal{border-left-color:var(--primary-light);}
+  .pub-item.conference{border-left-color:var(--accent2);}
+  .pub-item.chinese{border-left-color:var(--accent5);}
+  .pub-item.review{border-left-color:var(--accent4);}
+  .pub-item .me{color:var(--primary);font-weight:700;}
+  .pub-item .title{color:#111;font-weight:600;}
+  .pub-item .venue{
+    color:var(--accent2);
+    font-style:italic;
+    font-weight:600;
+  }
+  .pub-item.journal .venue{color:var(--primary-light);}
+  .pub-item.chinese .venue{color:var(--accent5);}
+  .pub-item .vol{color:#666;font-size:13.5px;}
+  .badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:700;
+    padding:2px 9px;
+    border-radius:10px;
+    margin-right:6px;
+    vertical-align:middle;
+    letter-spacing:.3px;
+  }
+  .badge.j{background:#e3f2fd;color:#0b3d91;}
+  .badge.c{background:#f3e5f5;color:#7b1fa2;}
+  .badge.cn{background:#e8f5e9;color:#2e7d32;}
+  .badge.r{background:#fff3e0;color:#e65100;}
+
+  /* ===== Service ===== */
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:14px;
+  }
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-top:4px solid var(--accent);
+    border-radius:12px;
+    padding:14px 20px;
+    font-size:14.5px;
+    transition:all .3s;
+    position:relative;
+    overflow:hidden;
+  }
+  .service-card:nth-child(2){border-top-color:var(--accent2);}
+  .service-card:nth-child(3){border-top-color:var(--accent3);}
+  .service-card:nth-child(4){border-top-color:var(--accent4);}
+  .service-card:nth-child(5){border-top-color:var(--accent5);}
+  .service-card:nth-child(6){border-top-color:var(--primary-light);}
+  .service-card:nth-child(7){border-top-color:var(--accent);}
+  .service-card:nth-child(8){border-top-color:var(--accent2);}
+  .service-card:hover{
+    box-shadow:0 8px 22px rgba(0,172,193,.18);
+    transform:translateY(-4px);
+  }
+  .service-card .s-icon{
+    display:inline-block;
+    margin-right:8px;
+    font-size:16px;
+  }
+
+  /* ===== Scroll to top ===== */
+  #back-top{
+    position:fixed;
+    right:26px;
+    bottom:26px;
+    width:46px;height:46px;
+    border-radius:50%;
+    background:linear-gradient(135deg,var(--primary),var(--accent));
+    color:#fff;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(11,61,145,.35);
+    transition:all .3s;
+    z-index:99;
+    font-size:20px;
+    border:none;
+  }
+  #back-top:hover{transform:translateY(-4px) scale(1.08);}
+
+  /* ===== Fade-in on scroll ===== */
+  .fade-in{
+    opacity:0;
+    transform:translateY(24px);
+    transition:opacity .7s ease,transform .7s ease;
+  }
+  .fade-in.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  /* ===== Footer ===== */
+  .footer{
+    text-align:center;
+    color:#888;
+    font-size:13px;
+    margin-top:56px;
+    padding-top:24px;
+    border-top:2px solid var(--border);
+  }
+  .footer .heart{color:var(--accent3);animation:pulse 1.5s infinite;display:inline-block;}
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1);}
+    50%{opacity:.55;transform:scale(1.25);}
+  }
+
+  /* ===== Responsive ===== */
+  @media(max-width:640px){
+    .profile{flex-direction:column;align-items:center;text-align:center;}
+    .profile img{width:160px;}
+    .topic-list{text-align:left;}
+    .header{padding:24px 20px 20px;}
+    .header h1{font-size:24px;}
+    .pub-group-head{padding:13px 16px;gap:9px;}
+    .g-year{font-size:16.5px;}
+    .pub-group-body{padding:0 16px;}
+    .pub-group.open .pub-group-body{padding:8px 16px 16px 16px;}
+  }
+</style>
 </head>
 <body>
+<a id="home" class="anchor"></a>
+<div id="container">
 
-  <!-- ================= 头部区域 ================= -->
-  <div class="header-section">
-    <!-- 图片加载失败时显示灰色占位块 -->
-    <img src="./files/guoyb.jpg" alt="Yanbu Guo" onerror="this.style.display='none';this.parentNode.insertAdjacentHTML('afterbegin','<div style=\'width:200px;height:260px;background:#f0f0f0;border:1px solid #ddd;flex-shrink:0;\'></div>')">
-    
-    <div class="header-info">
-      <h1>Yanbu Guo</h1>
-      <div class="signature">郭延哺</div>
-      
-      <div class="title">Associate Professor</div>
-      
-      <div class="affiliation">
-        <a href="https://www.zzuli.edu.cn/" target="_blank">College of Software Engineering</a><br>
-        <a href="https://www.zzuli.edu.cn/" target="_blank">Zhengzhou University of Light Industry</a>
-      </div>
-      
-      <div class="contact-info">
-        <div>Email_1: guoyanbu#zzuli.edu.cn</div>
-        <div>Email_2: guoyanbu#gmail.com</div>
-      </div>
+  <!-- ===== HEADER (仅装饰标题) ===== -->
+  <div class="header">
+    <h1><a href="./">Yanbu Guo</a></h1>
+    <div class="subtitle">Associate Professor · College of Software Engineering · Zhengzhou University of Light Industry</div>
+  </div>
+
+  <!-- ===== 1. PROFILE（经典学术主页格式） ===== -->
+  <div class="profile fade-in">
+    <a href="./"><img src="./files/guoyb.jpg" alt="Yanbu Guo" /></a>
+    <div class="bio">
+      <p><a href="./" class="name-link">Yanbu Guo</a> received the Ph.D. degree from Yunnan University, Kunming, China, and received a B.S. degree from Zhengzhou University of Light Industry, Zhengzhou, China. He is currently an Associate Professor with College of Software Engineering, Zhengzhou University of Light Industry, Zhengzhou, China, and also a visiting scholar with Southeast University, Nanjing, China. The interests mainly focus on the research topics:</p>
+
+      <ul class="topic-list">
+        <li><b>Complex Biological Networks and Systems</b>: Theory and Application of Artificial Intelligence</li>
+        <li><b>Neural Networks</b>: Graph/Bayesian/Quantum Neural Networks</li>
+        <li><b>Biomedical Informatics</b>: Biomolecule–Disease Associations/Drug Repositioning</li>
+        <li><b>Image Processing</b>: Image Denoising/Enhancement/Fusion</li>
+      </ul>
+
+      <p class="contact-line">Email: guoyanbu#zzuli.edu.cn (guoyanbu#gmail.com)</p>
+
+      <p class="mini-nav">
+        <a href="#Prospective students">Prospective students</a><span class="sep">|</span>
+        <a href="#Publications">Publications</a><span class="sep">|</span>
+        <a href="#Service">Service</a><span class="sep">|</span>
+      </p>
     </div>
   </div>
 
-  <!-- ================= 简介区域 ================= -->
-  <div class="bio-section">
-    <p>
-      Dr. Yanbu Guo received the Ph.D. degree from Yunnan University, Kunming, China, and received a B.S. degree from Zhengzhou University of Light Industry, Zhengzhou, China. He is currently an Associate Professor with College of Software Engineering, Zhengzhou University of Light Industry, Zhengzhou, China, and also a visiting scholar with Southeast University, Nanjing, China. His research interests include Complex Biological Networks and Systems, Neural Networks (Graph / Bayesian / Quantum Neural Networks), Biomedical Informatics (Biomolecule–Disease Associations / Drug Repositioning), and Image Processing (Image Denoising / Enhancement / Fusion).
-    </p>
-    <p>
-      Dr. Guo has published multiple papers in prestigious journals and conferences. His research has been supported by the National Natural Science Foundation of China and the Henan Provincial Key R&D and Promotion Special Project.
-    </p>
-    <p class="recruiting">
-      His research group is now recruiting self-motivated Undergraduate / Master / PhD students in Artificial Intelligence, Bioinformatics, and Medical Image Processing. He is also open to various collaborations. If you are interested in, please get in touch with him.
-    </p>
+  <!-- ===== 2. FUNDINGS ===== -->
+  <A NAME="Fundings"></A>
+  <h2>💰 主持项目 Fundings</h2>
+  <div class="funding-grid">
+    <div class="funding-card fade-in">
+      <span class="f-icon">🏆</span>
+      <span class="f-title">国家自然科学基金项目</span>
+      <span class="f-role">主持</span>
+      <span class="f-sub">基于复杂生物网络的环状RNA功能分析理论和方法研究</span>
+    </div>
+    <div class="funding-card fade-in">
+      <span class="f-icon">🏅</span>
+      <span class="f-title">河南省重点研发与推广专项</span>
+      <span class="f-role">主持</span>
+      <span class="f-sub">多模态数据驱动的药物-miRNA互作用预测系统研究</span>
+    </div>
+    <div class="funding-card fade-in">
+      <span class="f-icon">🏅</span>
+      <span class="f-title">河南省重点研发与推广专项</span>
+      <span class="f-role">主持</span>
+      <span class="f-sub">数据驱动的食管癌与miRNA互作用预测方法研究</span>
+    </div>
   </div>
 
-  <!-- ================= 以下为保留的原有模块 ================= -->
-  
-  <!-- 主持项目 -->
-  <section id="Fundings">
-    <h2>💰 主持项目 Fundings</h2>
-    <div class="funding-grid">
-      <div class="funding-card">
-        <span class="f-title">国家自然科学基金项目</span><span class="f-role">主持</span>
-        <span class="f-sub">基于复杂生物网络的环状RNA功能分析理论和方法研究</span>
-      </div>
-      <div class="funding-card">
-        <span class="f-title">河南省重点研发与推广专项</span><span class="f-role">主持</span>
-        <span class="f-sub">多模态数据驱动的药物-miRNA互作用预测系统研究</span>
-      </div>
-      <div class="funding-card">
-        <span class="f-title">河南省重点研发与推广专项</span><span class="f-role">主持</span>
-        <span class="f-sub">数据驱动的食管癌与miRNA互作用预测方法研究</span>
-      </div>
-    </div>
-  </section>
+  <!-- ===== 3. PROSPECTIVE STUDENTS ===== -->
+  <A NAME="Prospective students"></A>
+  <h2>🎓 Prospective Students</h2>
+  <div class="note fade-in">
+    The research group is now recruiting self-motivated Undergraduate / Master students in <b>Artificial Intelligence</b>, <b>Bioinformatics</b>, and <b>Medical Image Processing</b>. If you are interested in, please get in touch with me.
+  </div>
 
-  <!-- 发表论文 -->
-  <section id="Publications">
-    <h2>📄 Publications</h2>
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="journal">Journals</button>
-      <button class="filter-btn" data-filter="conference">Conferences</button>
-      <button class="filter-btn" data-filter="chinese">中文期刊</button>
-    </div>
+  <!-- ===== 4. PUBLICATIONS ===== -->
+  <A NAME="Publications"></A>
+  <h2>📄 Publications</h2>
 
-    <div id="pub-list">
-      <!-- Under Review -->
-      <div class="pub-group" data-year="review">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">Under Review</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, J. Guo, Y. Cao, P. Li, K. Zhou, <span class="title">STHG-NDR: A Spiking Heterogeneous Graph Framework with Temporal-Spatial Self-Distillation for ncRNA-Drug Resistance Association Prediction</span>, <span class="venue">AAAI</span>, 2027.</div>
-          <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, F. Qin, M. Huang, W. Wang, Y. Cao, <span class="title">TSSD-GCD: Temporal–Spatial Self-Distillation Graph Learning for Multi-Omics Cancer Driver Gene Prediction</span>, <span class="venue">AAAI</span>, 2027.</div>
-          <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, M. Huang, N. Li, W. Huang, J. Cao, <span class="title">Causal Metapath-based Heterogeneous Graph Modeling and Synergistic Representation Learning for disease triple-wise association mining</span>, <span class="venue">Biomedical Signal Processing and Control</span>, 2026.</div>
-          <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, K. Wang, Y. Cao, Z. Xu, W. Li, <span class="title">SAMF: Structure-constrained Attention and Hierarchical Multi-scale Fusion for Progressive Integration of Multi-slice Spatial Transcriptomics</span>, <span class="venue">Information Fusion</span>, 2026.</div>
-        </div></div>
+  <div class="filter-bar fade-in">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="journal">Journals</button>
+    <button class="filter-btn" data-filter="conference">Conferences</button>
+    <button class="filter-btn" data-filter="chinese">中文期刊</button>
+  </div>
+
+  <div id="pub-list">
+
+    <!-- ===== Under Review ===== -->
+    <div class="pub-group" data-year="review">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">Under Review</span>
+        <span class="g-arrow">展开 ▾</span>
       </div>
-
-      <!-- 2026 -->
-      <div class="pub-group" data-year="2026">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2026</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, F. Qin, Z. Xu, Y. Wang, Y. Cao, <span class="title">Multiview Discriminative Feature Fusion-Based Cancer Driver Gene Identification via Sparse Cross-Modal Generative Adversarial Model</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Q. Guo, J. Cao, Montasir Qasymeh, S. Song, Mahmoud Abdel-Aty, <span class="title">HGSAF: Heterogeneous graph structural alignment and distillation model with attentive fusion for microbe-drug association prediction</span>, <span class="venue">Journal of Biomedical Informatics</span>, 2026.</div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, H. Zhu, X. Xin, C. Li, J. Cao, <span class="title">Deep semantic and structural feature-aware drug repositioning with heterogeneous frequency-domain contrastive regularization learning</span>, <span class="venue">Engineering Applications of Artificial Intelligence</span>, <span class="vol">2026, 163, 113135.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, H. Zhu, J. Cao, R. Chen, D. Zhou, <span class="title">Learning heterogeneous biological interactions via meta-relation-guided dual-channel graph transformer for circular ribonucleic acid function prediction</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">2026, 342, 115929.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Y. Xin, X. Duan, D. Zhou, J. Cao, <span class="title">Cross-view graph representation learning with variational information bottleneck for the association prediction of micro RNA-diseases</span>, <span class="venue">Applied Soft Computing</span>, <span class="vol">2026, 193, 114850.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, J. Zhou, M. Huang, S. Zhang, J. Cao, <span class="title">Heterogeneous graph contrastive learning with topology and semantic representation for inferring disease-associated circular ribonucleic acids</span>, <span class="venue">Physica A: Statistical Mechanics and its Applications</span>, <span class="vol">2026, 695, 131646.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Y. Wang, <span class="me">Y. Guo</span>, S. Song, N. Li, J. Cao, <span class="title">Graph synergistic and statistics attention networks with information bottleneck for complex disease-related metabolite prediction</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>K. Zhou, J. Guo, Y. Cao, Z. Xu, <span class="me">Y. Guo</span>, <span class="title">Heterogeneous dual-channel and interpretable graph representation learning with global virtual nodes for microRNA-mediated drug sensitivity prediction</span>, <span class="venue">Molecular Diversity</span>, <span class="vol">2026.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Q. Liu, Y. Xia, <span class="me">Y. Guo</span>, W. Li, <span class="title">DiffAD: Diffusion augmentation for influenza virus antigenic distance prediction</span>, <span class="venue">Expert Systems with Applications</span>, <span class="vol">2026, 298, 129925.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Q. Liu, Y. Xia, <span class="me">Y. Guo</span>, W. Li, <span class="title">Graph contrastive learning with positional embeddings for predicting influenza antigenicity</span>, <span class="venue">Information Sciences</span>, <span class="vol">2026, 733, 122955.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>S. Song, Z. Chen, Y. Wang, Q. Guo, <span class="me">Y. Guo</span>, <span class="title">HGMAIB: Drug-target interaction prediction based on hierarchical gated multi-head attention and information bottleneck strategy</span>, <span class="venue">Complex Engineering Systems</span>, <span class="vol">2026, 6, 10.</span></div>
-          <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span><span class="me">郭延哺</span>, 李维华, 曹进德, 周冬明, <span class="title">基于异质生物图动态表示学习的药物靶标关系预测</span>, <span class="venue">北京大学学报(自然科学版)</span>, <span class="vol">2026, 62(2): 286-296.</span></div>
-          <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>朱昊坤, <span class="me">郭延哺</span>, 辛向军, 李朝阳, 周冬明, <span class="title">异质图动态特征学习的药物重定位预测</span>, <span class="venue">南方医科大学学报</span>, <span class="vol">2026, 46(02): 456-465.</span></div>
-          <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>黄敏, 曾梦, 贺康, <span class="me">郭延哺</span>, 曹阳, <span class="title">一种融合注意力和信息瓶颈的circRNA耐药性预测方法</span>, <span class="venue">南方医科大学学报</span>, 2026.</div>
-        </div></div>
-      </div>
-
-      <!-- 2025 -->
-      <div class="pub-group" data-year="2025">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2025</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Y. Xin, J. Cao, Y. Xu, D. Zhou, <span class="title">Deep gate information bottleneck-based prediction model for complex disease-related micro-ribonucleic acids via heterogeneous biological networks</span>, <span class="venue">Engineering Applications of Artificial Intelligence</span>, <span class="vol">2025, 156, 111222.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Q. Guo, S. Song, Y. Wang, J. Cao, <span class="title">Heterogeneous graph collaborative representation learning for drug-related microbe prediction with attentive fusion and reciprocal distillation</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">2025, 330, 114548.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Pang, M. Huang, D. Zhou, J. Cao, <span class="title">Deep dual dynamic gated convolutional model with interpretable pooling for genomic signal prediction</span>, <span class="venue">Data Intelligence</span>, <span class="vol">2025.</span></div>
-          <div class="pub-item conference" data-type="conference"><span class="badge c">Conference</span>H. Zhu, <span class="me">Y. Guo</span>, X. Qian, X. Xin, J. Cao, <span class="title">Semantic and structural feature-enriched graph contrastive learning for drug-disease association prediction</span>, <span class="venue">The 23rd Asia Pacific Bioinformatics Conference</span>, 2025.</div>
-          <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>陈紫豪, <span class="me">郭延哺</span>, 宋胜利, 郭全明, 周冬明, <span class="title">基于多层语义与拓扑融合的异质图方法提升药物-靶标相互作用预测性能</span>, <span class="venue">南方医科大学学报</span>, <span class="vol">2025, 45(11): 2394-2404.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>X. Zhao, <span class="me">Y. Guo</span>, B. Wang, W. Li, <span class="title">CKDTA: A chemical knowledge-enhanced framework for drug–target affinity prediction</span>, <span class="venue">Journal of Computational Science</span>, <span class="vol">2025, 60, 102706.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2024 -->
-      <div class="pub-group" data-year="2024">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2024</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, P. Li, C. Li, J. Cao, <span class="title">Context-aware Poly(A) Signal Prediction Model via Deep Spatial-Temporal Neural Networks</span>, <span class="venue">IEEE Transactions on Neural Networks and Learning Systems</span>, <span class="vol">2024, 35(6), 8241-8253.</span></div>
-          <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>郭全明, <span class="me">郭延哺</span>, 宋胜利, 陈紫豪, 朱昊坤, <span class="title">生物拓扑语义增强的药物与微生物异质图表征学习</span>, <span class="venue">模式识别与人工智能</span>, <span class="vol">2024, 37(12): 1121-1134.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>P. Li, G. Zhou, <span class="me">Y. Guo</span>, S. Zhang, Y. Jiang, Y. Tang, <span class="title">EPIC: An epidemiological investigation of COVID-19 dataset for Chinese named entity recognition</span>, <span class="venue">Information Processing & Management</span>, <span class="vol">2024, 61(1), 103541.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2023 -->
-      <div class="pub-group" data-year="2023">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2023</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, X. Ruan, J. Cao, <span class="title">Variational gated autoencoder-based feature extraction model for inferring disease-miRNA associations based on multiview features</span>, <span class="venue">Neural Networks</span>, <span class="vol">2023, 165, 491-505.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>W. Li, <span class="me">Y. Guo</span>, B. Wang, B. Yang, <span class="title">Learning Spatiotemporal Embedding with Gated Convolutional Recurrent Networks for Translation Initiation Site Prediction</span>, <span class="venue">Pattern Recognition</span>, <span class="vol">136, 2023, 109234.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>W. Li, W. Liu, <span class="me">Y. Guo</span>, B. Wang, H. Qing, <span class="title">Deep Contextual Representation Learning for Identifying Essential Proteins via Integrating Multisource Protein Features</span>, <span class="venue">Chinese Journal of Electronics</span>, <span class="vol">2023, 32(4).</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>S. Yang, D. Zhou, J. Cao, <span class="me">Y. Guo</span>, <span class="title">LightingNet: An Integrated Learning Method for Low-Light Image Enhancement</span>, <span class="venue">IEEE Transactions on Computational Imaging</span>, <span class="vol">2023, 9: 29-42.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2022 -->
-      <div class="pub-group" data-year="2022">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2022</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, J. Cao, R. Nie, X. Ruan, Y. Liu, <span class="title">Gated residual neural networks with self-normalization for translation initiation site recognition</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">237, 2022, 107783.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, C. Li, D. Zhou, J. Cao, H. Liang, <span class="title">Context-aware dynamic neural computational models for accurate Poly (A) signal prediction</span>, <span class="venue">Neural Networks</span>, <span class="vol">152, 2022, 287-299.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, W. Li, J. Cao, <span class="title">Deep multi-scale Gaussian residual networks for contextual-aware translation initiation site recognition</span>, <span class="venue">Expert Systems with Applications</span>, <span class="vol">207, 2022, 118004.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, H. Shen, W. Li, C. Li, C. Jin, <span class="title">Deep Effective k-mer representation learning for polyadenylation signal prediction via co-occurrence embedding</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">256, 2022, 109887.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>S. Yang, D. Zhou, J. Cao, <span class="me">Y. Guo</span>, <span class="title">Rethinking low-light enhancement via transformer-GAN</span>, <span class="venue">IEEE Signal Processing Letters</span>, <span class="vol">2022, 29: 1082-1086.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2021 -->
-      <div class="pub-group" data-year="2021">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2021</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, W. Li, J. Cao, R. Nie, L. Xiong, X. Ruan, <span class="title">Identifying polyadenylation signals with biological embedding via self-attentive gated convolutional highway networks</span>, <span class="venue">Applied Soft Computing</span>, <span class="vol">103, 2021, 107133.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>J. Mei, D. Zhou, J. Cao, R. Nie, <span class="me">Y. Guo</span>, <span class="title">Hdinet: Hierarchical dual-sensor interaction network for rgbt tracking</span>, <span class="venue">IEEE Sensors Journal</span>, <span class="vol">2021, 21(15): 16915-16926.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Y. Zang, D. Zhou, C. Wang, R. Nie, <span class="me">Y. Guo</span>, <span class="title">UFA-FUSE: A Novel Deep Supervised and Hybrid Model for Multifocus Image Fusion</span>, <span class="venue">IEEE Transactions on Instrumentation and Measurement</span>, <span class="vol">2021, 70, 5008717.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>C. Wang, D. Zhou, Y. Zang, R. Nie, <span class="me">Y. Guo</span>, <span class="title">A deep and supervised atrous convolutional model for multi-focus image fusion</span>, <span class="venue">IEEE Sensors Journal</span>, <span class="vol">2021, 21(20): 23069-23084.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2020 -->
-      <div class="pub-group" data-year="2020">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2020</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, R. Nie, X. Ruan, W. Li, <span class="title">DeepANF: A deep attentive neural framework with distributed representation for chromatin accessibility prediction</span>, <span class="venue">Neurocomputing</span>, <span class="vol">379, 2020, 305-318.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, W. Li, R. Nie, R. Hou, C. Zhou, <span class="title">Attentive gated neural networks for identifying chromatin accessibility</span>, <span class="venue">Neural Computing and Applications</span>, <span class="vol">32, 2020, 15557–15571.</span></div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>R. Hou, D. Zhou, R. Nie, D. Liu, L. Xiong, <span class="me">Y. Guo</span>, C. Yu, <span class="title">VIF-Net: An Unsupervised Framework for Infrared and Visible Image Fusion</span>, <span class="venue">IEEE Transactions on Computational Imaging</span>, <span class="vol">6, 2020, 640-651.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2019 -->
-      <div class="pub-group" data-year="2019">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2019</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, W. Li, N. Wang, H. Liu, D. Zhou, <span class="title">DeepACLSTM: deep asymmetric convolutional long short-term memory neural models for protein secondary structure prediction</span>, <span class="venue">BMC Bioinformatics</span>, <span class="vol">20, 2019, 341.</span></div>
-        </div></div>
-      </div>
-
-      <!-- 2018 -->
-      <div class="pub-group" data-year="2018">
-        <div class="pub-group-head">
-          <span class="g-dot"></span><span class="g-year">2018</span><span class="g-arrow">展开 ▾</span>
-        </div>
-        <div class="pub-group-body"><div>
-          <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, B. Wang, W. Li, B. Yang, <span class="title">Protein secondary structure prediction improved by recurrent neural networks integrated with two-dimensional convolutional neural networks</span>, <span class="venue">Journal of Bioinformatics and Computational Biology</span>, <span class="vol">16(5), 2018, 1850021.</span></div>
-        </div></div>
+      <div class="pub-group-body">
+        <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, J. Guo, Y. Cao, P. Li, K. Zhou, <span class="title">STHG-NDR: A Spiking Heterogeneous Graph Framework with Temporal-Spatial Self-Distillation for ncRNA-Drug Resistance Association Prediction</span>, <span class="venue">AAAI</span>, 2027.</div>
+        <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, F. Qin, M. Huang, W. Wang, Y. Cao, <span class="title">TSSD-GCD: Temporal–Spatial Self-Distillation Graph Learning for Multi-Omics Cancer Driver Gene Prediction</span>, <span class="venue">AAAI</span>, 2027.</div>
+        <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, W. Wang, M. Huang, F. Qin, J. Cao, <span class="title">MAFWT: Multi-agent Fourier and Wavelet-based Transformer for Robust Cross-Slice Spatial Transcriptomics Integration</span>, <span class="venue">AAAI</span>, 2027.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, M. Huang, N. Li, W. Huang, J. Cao, <span class="title">Causal Metapath-based Heterogeneous Graph Modeling and Synergistic Representation Learning for disease triple-wise association mining</span>, <span class="venue">Biomedical Signal Processing and Control</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, K. Wang, Y. Cao, Z. Xu, W. Li, <span class="title">SAMF: Structure-constrained Attention and Hierarchical Multi-scale Fusion for Progressive Integration of Multi-slice Spatial Transcriptomics</span>, <span class="venue">Information Fusion</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, Y. Wang, T. Zhang, L. Li, S. Song, <span class="title">Neuromorphic Graph Attention with Self-Distilled Multi-Objective Reinforcement Learning for Disease–related Metabolite Predictions</span>, <span class="venue">Neural Networks</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, K. Wang, X. Zhang, L. Li, X. Qian, <span class="title">Multiscale Cross-Type Graph Neural Networks with Wavelet and Fourier Transforms for Direction-Aware Gene-Microbe-Disease Association Mining</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span>M. Huang, M. Zeng, N. Ma, <span class="me">Y. Guo</span>, S. Zhang, J. Cao, <span class="title">Heterogeneous graph representation and dual-view contrastive learning for drug-target binding affinity prediction</span>, <span class="venue">IEEE Transactions on Emerging Topics in Computational Intelligence</span>, 2026.</div>
       </div>
     </div>
-  </section>
 
-  <!-- 学术服务 -->
-  <section id="Service">
-    <h2>🏛 Service</h2>
-    <div class="service-grid">
-      <div class="service-card"><span class="s-icon">📖</span>Academic Editor of <b>PLOS Computational Biology</b></div>
-      <div class="service-card"><span class="s-icon">🔬</span>Youth Editorial Board of <b>Cancer Innovation</b></div>
-      <div class="service-card"><span class="s-icon">📊</span>Youth Editorial Board of <b>Applied Mathematics and Statistics</b></div>
-      <div class="service-card"><span class="s-icon">🇨🇳</span><b>南方医科大学学报</b> — 青年编委</div>
-      <div class="service-card"><span class="s-icon">🧬</span><b>基因组学与应用生物学</b> — 青年编委</div>
-      <div class="service-card"><span class="s-icon">🤖</span>中国自动化学会智能健康与生物信息专业委员会委员</div>
-      <div class="service-card"><span class="s-icon">💻</span>中国计算机学会生物信息学专业委员会委员；科学普及工作委员会委员</div>
-      <div class="service-card"><span class="s-icon">🔗</span><a href="https://orcid.org/0000-0001-9532-2309" target="_blank">ORCID Profile</a></div>
+    <!-- ===== 2026 ===== -->
+    <div class="pub-group" data-year="2026">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2026</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, F. Qin, Z. Xu, Y. Wang, Y. Cao, <span class="title">Multiview Discriminative Feature Fusion-Based Cancer Driver Gene Identification via Sparse Cross-Modal Generative Adversarial Model</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Q. Guo, J. Cao, Montasir Qasymeh, S. Song, Mahmoud Abdel-Aty, <span class="title">HGSAF: Heterogeneous graph structural alignment and distillation model with attentive fusion for microbe-drug association prediction</span>, <span class="venue">Journal of Biomedical Informatics</span>, 2026.</div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, H. Zhu, X. Xin, C. Li, J. Cao, <span class="title">Deep semantic and structural feature-aware drug repositioning with heterogeneous frequency-domain contrastive regularization learning</span>, <span class="venue">Engineering Applications of Artificial Intelligence</span>, <span class="vol">2026, 163, 113135.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, H. Zhu, J. Cao, R. Chen, D. Zhou, <span class="title">Learning heterogeneous biological interactions via meta-relation-guided dual-channel graph transformer for circular ribonucleic acid function prediction</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">2026, 342, 115929.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Y. Xin, X. Duan, D. Zhou, J. Cao, <span class="title">Cross-view graph representation learning with variational information bottleneck for the association prediction of micro RNA-diseases</span>, <span class="venue">Applied Soft Computing</span>, <span class="vol">2026, 193, 114850.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, J. Zhou, M. Huang, S. Zhang, J. Cao, <span class="title">Heterogeneous graph contrastive learning with topology and semantic representation for inferring disease-associated circular ribonucleic acids</span>, <span class="venue">Physica A: Statistical Mechanics and its Applications</span>, <span class="vol">2026, 695, 131646.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Y. Wang, <span class="me">Y. Guo</span>, S. Song, N. Li, J. Cao, <span class="title">Graph synergistic and statistics attention networks with information bottleneck for complex disease-related metabolite prediction</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>K. Zhou, J. Guo, Y. Cao, Z. Xu, <span class="me">Y. Guo</span>, <span class="title">Heterogeneous dual-channel and interpretable graph representation learning with global virtual nodes for microRNA-mediated drug sensitivity prediction</span>, <span class="venue">Molecular Diversity</span>, <span class="vol">2026.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Q. Liu, Y. Xia, <span class="me">Y. Guo</span>, W. Li, <span class="title">DiffAD: Diffusion augmentation for influenza virus antigenic distance prediction</span>, <span class="venue">Expert Systems with Applications</span>, <span class="vol">2026, 298, 129925.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Q. Liu, Y. Xia, <span class="me">Y. Guo</span>, W. Li, <span class="title">Graph contrastive learning with positional embeddings for predicting influenza antigenicity</span>, <span class="venue">Information Sciences</span>, <span class="vol">2026, 733, 122955.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>S. Song, Z. Chen, Y. Wang, Q. Guo, <span class="me">Y. Guo</span>, <span class="title">HGMAIB: Drug-target interaction prediction based on hierarchical gated multi-head attention and information bottleneck strategy</span>, <span class="venue">Complex Engineering Systems</span>, <span class="vol">2026, 6, 10.</span></div>
+        <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span><span class="me">郭延哺</span>, 李维华, 曹进德, 周冬明, <span class="title">基于异质生物图动态表示学习的药物靶标关系预测</span>, <span class="venue">北京大学学报(自然科学版)</span>, <span class="vol">2026, 62(2): 286-296.</span></div>
+        <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>朱昊坤, <span class="me">郭延哺</span>, 辛向军, 李朝阳, 周冬明, <span class="title">异质图动态特征学习的药物重定位预测</span>, <span class="venue">南方医科大学学报</span>, <span class="vol">2026, 46(02): 456-465.</span></div>
+        <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>黄敏, 曾梦, 贺康, <span class="me">郭延哺</span>, 曹阳, <span class="title">一种融合注意力和信息瓶颈的circRNA耐药性预测方法</span>, <span class="venue">南方医科大学学报</span>, 2026.</div>
+      </div>
     </div>
-  </section>
 
-  <!-- 页脚 -->
-  <footer class="footer">
+    <!-- ===== 2025 ===== -->
+    <div class="pub-group" data-year="2025">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2025</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Y. Xin, J. Cao, Y. Xu, D. Zhou, <span class="title">Deep gate information bottleneck-based prediction model for complex disease-related micro-ribonucleic acids via heterogeneous biological networks</span>, <span class="venue">Engineering Applications of Artificial Intelligence</span>, <span class="vol">2025, 156, 111222.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, Q. Guo, S. Song, Y. Wang, J. Cao, <span class="title">Heterogeneous graph collaborative representation learning for drug-related microbe prediction with attentive fusion and reciprocal distillation</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">2025, 330, 114548.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Pang, M. Huang, D. Zhou, J. Cao, <span class="title">Deep dual dynamic gated convolutional model with interpretable pooling for genomic signal prediction</span>, <span class="venue">Data Intelligence</span>, <span class="vol">2025.</span></div>
+        <div class="pub-item conference" data-type="conference"><span class="badge c">Conference</span>H. Zhu, <span class="me">Y. Guo</span>, X. Qian, X. Xin, J. Cao, <span class="title">Semantic and structural feature-enriched graph contrastive learning for drug-disease association prediction</span>, <span class="venue">The 23rd Asia Pacific Bioinformatics Conference</span>, 2025.</div>
+        <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>陈紫豪, <span class="me">郭延哺</span>, 宋胜利, 郭全明, 周冬明, <span class="title">基于多层语义与拓扑融合的异质图方法提升药物-靶标相互作用预测性能</span>, <span class="venue">南方医科大学学报</span>, <span class="vol">2025, 45(11): 2394-2404.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>X. Zhao, <span class="me">Y. Guo</span>, B. Wang, W. Li, <span class="title">CKDTA: A chemical knowledge-enhanced framework for drug–target affinity prediction</span>, <span class="venue">Journal of Computational Science</span>, <span class="vol">2025, 60, 102706.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2024 ===== -->
+    <div class="pub-group" data-year="2024">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2024</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, P. Li, C. Li, J. Cao, <span class="title">Context-aware Poly(A) Signal Prediction Model via Deep Spatial-Temporal Neural Networks</span>, <span class="venue">IEEE Transactions on Neural Networks and Learning Systems</span>, <span class="vol">2024, 35(6), 8241-8253.</span></div>
+        <div class="pub-item chinese" data-type="chinese"><span class="badge cn">中文</span>郭全明, <span class="me">郭延哺</span>, 宋胜利, 陈紫豪, 朱昊坤, <span class="title">生物拓扑语义增强的药物与微生物异质图表征学习</span>, <span class="venue">模式识别与人工智能</span>, <span class="vol">2024, 37(12): 1121-1134.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>P. Li, G. Zhou, <span class="me">Y. Guo</span>, S. Zhang, Y. Jiang, Y. Tang, <span class="title">EPIC: An epidemiological investigation of COVID-19 dataset for Chinese named entity recognition</span>, <span class="venue">Information Processing & Management</span>, <span class="vol">2024, 61(1), 103541.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2023 ===== -->
+    <div class="pub-group" data-year="2023">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2023</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, X. Ruan, J. Cao, <span class="title">Variational gated autoencoder-based feature extraction model for inferring disease-miRNA associations based on multiview features</span>, <span class="venue">Neural Networks</span>, <span class="vol">2023, 165, 491-505.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>W. Li, <span class="me">Y. Guo</span>, B. Wang, B. Yang, <span class="title">Learning Spatiotemporal Embedding with Gated Convolutional Recurrent Networks for Translation Initiation Site Prediction</span>, <span class="venue">Pattern Recognition</span>, <span class="vol">136, 2023, 109234.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>W. Li, W. Liu, <span class="me">Y. Guo</span>, B. Wang, H. Qing, <span class="title">Deep Contextual Representation Learning for Identifying Essential Proteins via Integrating Multisource Protein Features</span>, <span class="venue">Chinese Journal of Electronics</span>, <span class="vol">2023, 32(4).</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>S. Yang, D. Zhou, J. Cao, <span class="me">Y. Guo</span>, <span class="title">LightingNet: An Integrated Learning Method for Low-Light Image Enhancement</span>, <span class="venue">IEEE Transactions on Computational Imaging</span>, <span class="vol">2023, 9: 29-42.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2022 ===== -->
+    <div class="pub-group" data-year="2022">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2022</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, J. Cao, R. Nie, X. Ruan, Y. Liu, <span class="title">Gated residual neural networks with self-normalization for translation initiation site recognition</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">237, 2022, 107783.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, C. Li, D. Zhou, J. Cao, H. Liang, <span class="title">Context-aware dynamic neural computational models for accurate Poly (A) signal prediction</span>, <span class="venue">Neural Networks</span>, <span class="vol">152, 2022, 287-299.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, W. Li, J. Cao, <span class="title">Deep multi-scale Gaussian residual networks for contextual-aware translation initiation site recognition</span>, <span class="venue">Expert Systems with Applications</span>, <span class="vol">207, 2022, 118004.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, H. Shen, W. Li, C. Li, C. Jin, <span class="title">Deep Effective k-mer representation learning for polyadenylation signal prediction via co-occurrence embedding</span>, <span class="venue">Knowledge-Based Systems</span>, <span class="vol">256, 2022, 109887.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>S. Yang, D. Zhou, J. Cao, <span class="me">Y. Guo</span>, <span class="title">Rethinking low-light enhancement via transformer-GAN</span>, <span class="venue">IEEE Signal Processing Letters</span>, <span class="vol">2022, 29: 1082-1086.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2021 ===== -->
+    <div class="pub-group" data-year="2021">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2021</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, W. Li, J. Cao, R. Nie, L. Xiong, X. Ruan, <span class="title">Identifying polyadenylation signals with biological embedding via self-attentive gated convolutional highway networks</span>, <span class="venue">Applied Soft Computing</span>, <span class="vol">103, 2021, 107133.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>J. Mei, D. Zhou, J. Cao, R. Nie, <span class="me">Y. Guo</span>, <span class="title">Hdinet: Hierarchical dual-sensor interaction network for rgbt tracking</span>, <span class="venue">IEEE Sensors Journal</span>, <span class="vol">2021, 21(15): 16915-16926.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>Y. Zang, D. Zhou, C. Wang, R. Nie, <span class="me">Y. Guo</span>, <span class="title">UFA-FUSE: A Novel Deep Supervised and Hybrid Model for Multifocus Image Fusion</span>, <span class="venue">IEEE Transactions on Instrumentation and Measurement</span>, <span class="vol">2021, 70, 5008717.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>C. Wang, D. Zhou, Y. Zang, R. Nie, <span class="me">Y. Guo</span>, <span class="title">A deep and supervised atrous convolutional model for multi-focus image fusion</span>, <span class="venue">IEEE Sensors Journal</span>, <span class="vol">2021, 21(20): 23069-23084.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2020 ===== -->
+    <div class="pub-group" data-year="2020">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2020</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, R. Nie, X. Ruan, W. Li, <span class="title">DeepANF: A deep attentive neural framework with distributed representation for chromatin accessibility prediction</span>, <span class="venue">Neurocomputing</span>, <span class="vol">379, 2020, 305-318.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, D. Zhou, W. Li, R. Nie, R. Hou, C. Zhou, <span class="title">Attentive gated neural networks for identifying chromatin accessibility</span>, <span class="venue">Neural Computing and Applications</span>, <span class="vol">32, 2020, 15557–15571.</span></div>
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span>R. Hou, D. Zhou, R. Nie, D. Liu, L. Xiong, <span class="me">Y. Guo</span>, C. Yu, <span class="title">VIF-Net: An Unsupervised Framework for Infrared and Visible Image Fusion</span>, <span class="venue">IEEE Transactions on Computational Imaging</span>, <span class="vol">6, 2020, 640-651.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2019 ===== -->
+    <div class="pub-group" data-year="2019">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2019</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, W. Li, N. Wang, H. Liu, D. Zhou, <span class="title">DeepACLSTM: deep asymmetric convolutional long short-term memory neural models for protein secondary structure prediction</span>, <span class="venue">BMC Bioinformatics</span>, <span class="vol">20, 2019, 341.</span></div>
+      </div>
+    </div>
+
+    <!-- ===== 2018 ===== -->
+    <div class="pub-group" data-year="2018">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">2018</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="journal"><span class="badge j">Journal</span><span class="me">Y. Guo</span>, B. Wang, W. Li, B. Yang, <span class="title">Protein secondary structure prediction improved by recurrent neural networks integrated with two-dimensional convolutional neural networks</span>, <span class="venue">Journal of Bioinformatics and Computational Biology</span>, <span class="vol">16(5), 2018, 1850021.</span></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== 5. SERVICE ===== -->
+  <A NAME="Service"></A>
+  <h2>🏛 Service</h2>
+  <div class="service-grid">
+    <div class="service-card"><span class="s-icon">📖</span>Academic Editor of <b>PLOS Computational Biology</b></div>
+    <div class="service-card"><span class="s-icon">🔬</span>Youth Editorial Board of <b>Cancer Innovation</b></div>
+    <div class="service-card"><span class="s-icon">📊</span>Youth Editorial Board of <b>Applied Mathematics and Statistics</b></div>
+    <div class="service-card"><span class="s-icon">🇨🇳</span><b>南方医科大学学报</b> — 青年编委</div>
+    <div class="service-card"><span class="s-icon">🧬</span><b>基因组学与应用生物学</b> — 青年编委</div>
+    <div class="service-card"><span class="s-icon">🤖</span>中国自动化学会智能健康与生物信息专业委员会委员</div>
+    <div class="service-card"><span class="s-icon">💻</span>中国计算机学会生物信息学专业委员会委员；科学普及工作委员会委员</div>
+    <div class="service-card"><span class="s-icon">🔗</span><a href="https://orcid.org/0000-0001-9532-2309" target="_blank">ORCID Profile</a></div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div class="footer">
     © Yanbu Guo · College of Software Engineering, Zhengzhou University of Light Industry
-    <br><span style="font-size:12px;">Last updated 2026</span>
-  </footer>
+    <br><span style="font-size:12px;">Made with <span class="heart">♥</span> · Last updated 2026</span>
+  </div>
+
 </div>
 
+<!-- Back to top -->
 <button id="back-top" title="Back to top">↑</button>
 
 <script>
-  // 1. 年份折叠交互
-  document.querySelectorAll('.pub-group').forEach(group => {
-    const head = group.querySelector('.pub-group-head');
-    const arrow = head.querySelector('.g-arrow');
-    head.addEventListener('click', () => {
-      group.classList.toggle('open');
-      arrow.textContent = group.classList.contains('open') ? '收起 ▴' : '展开 ▾';
-    });
+/* ===== 年份折叠 ===== */
+document.querySelectorAll('.pub-group').forEach(group => {
+  const head  = group.querySelector('.pub-group-head');
+  const arrow = head.querySelector('.g-arrow');
+  head.addEventListener('click', () => {
+    group.classList.toggle('open');
+    arrow.textContent = group.classList.contains('open') ? '收起 ▴' : '展开 ▾';
   });
+});
 
-  // 2. 论文筛选
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.filter;
+/* ===== 筛选 ===== */
+const filterBtns = document.querySelectorAll('.filter-btn');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
 
-      document.querySelectorAll('.pub-group').forEach(group => {
-        let visible = 0;
-        group.querySelectorAll('.pub-item').forEach(item => {
-          const match = (filter === 'all' || item.dataset.type === filter);
-          item.style.display = match ? '' : 'none';
-          if (match) visible++;
-        });
-
-        const arrow = group.querySelector('.g-arrow');
-        group.style.display = visible === 0 ? 'none' : '';
-        
+    document.querySelectorAll('.pub-group').forEach(group => {
+      const items = group.querySelectorAll('.pub-item');
+      let visible = 0;
+      items.forEach(item => {
+        const match = (filter === 'all' || item.dataset.type === filter);
+        item.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      const arrow = group.querySelector('.g-arrow');
+      if (visible === 0) {
+        group.style.display = 'none';
+      } else {
+        group.style.display = '';
         if (filter === 'all') {
           group.classList.remove('open');
           arrow.textContent = '展开 ▾';
@@ -485,16 +806,32 @@
           group.classList.add('open');
           arrow.textContent = '收起 ▴';
         }
-      });
+      }
     });
   });
+});
 
-  // 3. 返回顶部
-  const backTop = document.getElementById('back-top');
-  window.addEventListener('scroll', () => {
-    backTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
+/* ===== Scroll to top ===== */
+const backTop = document.getElementById('back-top');
+window.addEventListener('scroll', () => {
+  backTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
+});
+backTop.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+/* ===== Fade-in on scroll ===== */
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
   });
-  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}, { threshold: 0.1 });
+fadeEls.forEach(el => observer.observe(el));
 </script>
+
 </body>
 </html>
