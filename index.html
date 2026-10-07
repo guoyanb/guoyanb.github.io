@@ -40,64 +40,6 @@
 
   #container{max-width:1000px;margin:0 auto;padding:0 18px 60px;}
 
-  /* ===== Animated Gradient Header ===== */
-  .header{
-    background:linear-gradient(135deg,#0b3d91,#1565c0,#00acc1,#7b1fa2);
-    background-size:400% 400%;
-    animation:gradientShift 14s ease infinite;
-    color:#fff;
-    border-radius:0 0 22px 22px;
-    padding:34px 36px 28px;
-    box-shadow:0 10px 30px rgba(11,61,145,.3);
-    margin-bottom:26px;
-    position:relative;
-    overflow:hidden;
-  }
-  .header::before{
-    content:"";
-    position:absolute;
-    top:-60px;right:-60px;
-    width:220px;height:220px;
-    background:radial-gradient(circle,rgba(255,255,255,.18),transparent 70%);
-    border-radius:50%;
-    animation:float 8s ease-in-out infinite;
-  }
-  .header::after{
-    content:"";
-    position:absolute;
-    bottom:-80px;left:-40px;
-    width:180px;height:180px;
-    background:radial-gradient(circle,rgba(0,172,193,.28),transparent 70%);
-    border-radius:50%;
-    animation:float 10s ease-in-out infinite reverse;
-  }
-  @keyframes gradientShift{
-    0%{background-position:0% 50%;}
-    50%{background-position:100% 50%;}
-    100%{background-position:0% 50%;}
-  }
-  @keyframes float{
-    0%,100%{transform:translateY(0) scale(1);}
-    50%{transform:translateY(-18px) scale(1.08);}
-  }
-  .header h1{
-    margin:0;
-    font-size:30px;
-    letter-spacing:.6px;
-    color:#fff;
-    position:relative;
-    z-index:2;
-    text-shadow:0 2px 8px rgba(0,0,0,.2);
-  }
-  .header h1 a{color:#fff;}
-  .header .subtitle{
-    font-size:14.5px;
-    opacity:.95;
-    margin-top:6px;
-    position:relative;
-    z-index:2;
-  }
-
   /* ===== Sections ===== */
   h2{
     font-size:22px;
@@ -117,7 +59,7 @@
     border-radius:3px;
   }
 
-  /* ===== Profile (经典学术主页布局) ===== */
+  /* ===== Profile ===== */
   .profile{
     display:flex;
     gap:26px;
@@ -172,64 +114,6 @@
   .mini-nav a:hover{color:var(--accent3);}
   .mini-nav .sep{color:#999;margin:0 4px;}
 
-  /* ===== Fundings ===== */
-  .funding-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:14px;
-  }
-  .funding-card{
-    background:linear-gradient(135deg,#fffdf5,#ffffff);
-    border:1px solid #f0e6c8;
-    border-left:5px solid var(--gold);
-    border-radius:12px;
-    padding:18px 22px;
-    font-size:15px;
-    transition:all .3s;
-    position:relative;
-    overflow:hidden;
-  }
-  .funding-card::after{
-    content:"";
-    position:absolute;
-    top:-40px;right:-40px;
-    width:110px;height:110px;
-    background:radial-gradient(circle,rgba(240,180,0,.12),transparent 70%);
-    border-radius:50%;
-  }
-  .funding-card:hover{
-    transform:translateY(-4px);
-    box-shadow:0 8px 22px rgba(240,180,0,.2);
-    border-left-color:var(--accent4);
-  }
-  .funding-card .f-icon{font-size:22px;margin-right:8px;}
-  .funding-card .f-title{
-    font-weight:700;
-    color:var(--primary);
-    font-size:16px;
-  }
-  .funding-card .f-role{
-    display:inline-block;
-    background:linear-gradient(135deg,#ff9800,#e65100);
-    color:#fff;
-    font-size:12px;
-    font-weight:700;
-    padding:2px 12px;
-    border-radius:10px;
-    margin-left:8px;
-    vertical-align:middle;
-    letter-spacing:.5px;
-    box-shadow:0 2px 6px rgba(230,81,0,.25);
-  }
-  .funding-card .f-sub{
-    display:block;
-    font-size:14.5px;
-    color:#333;
-    margin-top:8px;
-    line-height:1.6;
-    font-weight:500;
-  }
-
   /* ===== Prospective students ===== */
   .note{
     background:linear-gradient(90deg,#e3f2fd,#e0f7fa,#f3e5f5);
@@ -275,7 +159,7 @@
     box-shadow:0 4px 12px rgba(11,61,145,.25);
   }
 
-  /* ===== Publication Year Groups ===== */
+  /* ===== Publication Groups ===== */
   .pub-group{
     background:var(--card);
     border:1px solid var(--border);
@@ -351,17 +235,15 @@
     padding:8px 22px 18px 22px;
   }
 
-  .pub-group[data-year="review"] .g-dot{
-    background:linear-gradient(135deg,var(--accent4),#e65100);
-    box-shadow:0 0 0 4px rgba(255,152,0,.18);
-  }
-  .pub-group[data-year="review"] .g-year{color:var(--review-color);}
-  .pub-group[data-year="review"] .pub-group-head::before{
-    background:linear-gradient(180deg,var(--accent4),#e65100);
-  }
-  .pub-group[data-year="review"].open .pub-group-head{
-    background:linear-gradient(90deg,#fff8f0,#ffffff);
-  }
+  .pub-group[data-year="funding"] .g-dot{ background:linear-gradient(135deg,var(--gold),#e65100); box-shadow:0 0 0 4px rgba(240,180,0,.18); }
+  .pub-group[data-year="funding"] .g-year{ color:#b26a00; }
+  .pub-group[data-year="funding"] .pub-group-head::before{ background:linear-gradient(180deg,var(--gold),#e65100); }
+  .pub-group[data-year="funding"].open .pub-group-head{ background:linear-gradient(90deg,#fff8f0,#ffffff); }
+
+  .pub-group[data-year="service"] .g-dot{ background:linear-gradient(135deg,var(--accent5),var(--primary-light)); box-shadow:0 0 0 4px rgba(76,175,80,.18); }
+  .pub-group[data-year="service"] .g-year{ color:var(--accent5); }
+  .pub-group[data-year="service"] .pub-group-head::before{ background:linear-gradient(180deg,var(--accent5),var(--primary-light)); }
+  .pub-group[data-year="service"].open .pub-group-head{ background:linear-gradient(90deg,#f0fff4,#ffffff); }
 
   /* ===== Publication Items ===== */
   .pub-item{
@@ -408,40 +290,7 @@
   .badge.c{background:#f3e5f5;color:#7b1fa2;}
   .badge.cn{background:#e8f5e9;color:#2e7d32;}
   .badge.r{background:#fff3e0;color:#e65100;}
-
-  /* ===== Service ===== */
-  .service-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:14px;
-  }
-  .service-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-top:4px solid var(--accent);
-    border-radius:12px;
-    padding:14px 20px;
-    font-size:14.5px;
-    transition:all .3s;
-    position:relative;
-    overflow:hidden;
-  }
-  .service-card:nth-child(2){border-top-color:var(--accent2);}
-  .service-card:nth-child(3){border-top-color:var(--accent3);}
-  .service-card:nth-child(4){border-top-color:var(--accent4);}
-  .service-card:nth-child(5){border-top-color:var(--accent5);}
-  .service-card:nth-child(6){border-top-color:var(--primary-light);}
-  .service-card:nth-child(7){border-top-color:var(--accent);}
-  .service-card:nth-child(8){border-top-color:var(--accent2);}
-  .service-card:hover{
-    box-shadow:0 8px 22px rgba(0,172,193,.18);
-    transform:translateY(-4px);
-  }
-  .service-card .s-icon{
-    display:inline-block;
-    margin-right:8px;
-    font-size:16px;
-  }
+  .badge.gold{background:#fff8e1;color:#b26a00;}
 
   /* ===== Scroll to top ===== */
   #back-top{
@@ -495,8 +344,6 @@
     .profile{flex-direction:column;align-items:center;text-align:center;}
     .profile img{width:160px;}
     .topic-list{text-align:left;}
-    .header{padding:24px 20px 20px;}
-    .header h1{font-size:24px;}
     .pub-group-head{padding:13px 16px;gap:9px;}
     .g-year{font-size:16.5px;}
     .pub-group-body{padding:0 16px;}
@@ -507,14 +354,7 @@
 <body>
 <a id="home" class="anchor"></a>
 <div id="container">
-
-  <!-- ===== HEADER (仅装饰标题) ===== -->
-  <div class="header">
-    <h1><a href="./">Yanbu Guo</a></h1>
-    <div class="subtitle">Associate Professor · College of Software Engineering · Zhengzhou University of Light Industry</div>
-  </div>
-
-  <!-- ===== 1. PROFILE（经典学术主页格式） ===== -->
+  <!-- ===== 1. PROFILE ===== -->
   <div class="profile fade-in">
     <a href="./"><img src="./files/guoyb.jpg" alt="Yanbu Guo" /></a>
     <div class="bio">
@@ -529,35 +369,33 @@
 
       <p class="contact-line">Email: guoyanbu#zzuli.edu.cn (guoyanbu#gmail.com)</p>
 
-      <p class="mini-nav">
-        <a href="#Prospective students">Prospective students</a><span class="sep">|</span>
-        <a href="#Publications">Publications</a><span class="sep">|</span>
-        <a href="#Service">Service</a><span class="sep">|</span>
-      </p>
     </div>
   </div>
 
   <!-- ===== 2. FUNDINGS ===== -->
   <A NAME="Fundings"></A>
   <h2>💰 主持项目 Fundings</h2>
-  <div class="funding-grid">
-    <div class="funding-card fade-in">
-      <span class="f-icon">🏆</span>
-      <span class="f-title">国家自然科学基金项目</span>
-      <span class="f-role">主持</span>
-      <span class="f-sub">基于复杂生物网络的环状RNA功能分析理论和方法研究</span>
-    </div>
-    <div class="funding-card fade-in">
-      <span class="f-icon">🏅</span>
-      <span class="f-title">河南省重点研发与推广专项</span>
-      <span class="f-role">主持</span>
-      <span class="f-sub">多模态数据驱动的药物-miRNA互作用预测系统研究</span>
-    </div>
-    <div class="funding-card fade-in">
-      <span class="f-icon">🏅</span>
-      <span class="f-title">河南省重点研发与推广专项</span>
-      <span class="f-role">主持</span>
-      <span class="f-sub">数据驱动的食管癌与miRNA互作用预测方法研究</span>
+  <div id="funding-list" class="fade-in">
+    <div class="pub-group" data-year="funding">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">项目列表</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="funding">
+          <span class="badge gold">国家自然科学基金</span>
+          <span class="me">主持</span>, <span class="title">基于复杂生物网络的环状RNA功能分析理论和方法研究</span>
+        </div>
+        <div class="pub-item journal" data-type="funding">
+          <span class="badge gold">河南省重点研发与推广专项</span>
+          <span class="me">主持</span>, <span class="title">多模态数据驱动的药物-miRNA互作用预测系统研究</span>
+        </div>
+        <div class="pub-item journal" data-type="funding">
+          <span class="badge gold">河南省重点研发与推广专项</span>
+          <span class="me">主持</span>, <span class="title">数据驱动的食管癌与miRNA互作用预测方法研究</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -577,6 +415,8 @@
     <button class="filter-btn" data-filter="journal">Journals</button>
     <button class="filter-btn" data-filter="conference">Conferences</button>
     <button class="filter-btn" data-filter="chinese">中文期刊</button>
+    <button class="filter-btn" data-filter="funding">项目</button>
+    <button class="filter-btn" data-filter="service">服务</button>
   </div>
 
   <div id="pub-list">
@@ -593,9 +433,9 @@
         <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, F. Qin, M. Huang, W. Wang, Y. Cao, <span class="title">TSSD-GCD: Temporal–Spatial Self-Distillation Graph Learning for Multi-Omics Cancer Driver Gene Prediction</span>, <span class="venue">AAAI</span>, 2027.</div>
         <div class="pub-item review" data-type="conference"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, W. Wang, M. Huang, F. Qin, J. Cao, <span class="title">MAFWT: Multi-agent Fourier and Wavelet-based Transformer for Robust Cross-Slice Spatial Transcriptomics Integration</span>, <span class="venue">AAAI</span>, 2027.</div>
         <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, M. Huang, N. Li, W. Huang, J. Cao, <span class="title">Causal Metapath-based Heterogeneous Graph Modeling and Synergistic Representation Learning for disease triple-wise association mining</span>, <span class="venue">Biomedical Signal Processing and Control</span>, 2026.</div>
-        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, K. Wang, Y. Cao, Z. Xu, W. Li, <span class="title">SAMF: Structure-constrained Attention and Hierarchical Multi-scale Fusion for Progressive Integration of Multi-slice Spatial Transcriptomics</span>, <span class="venue">Information Fusion</span>, 2026.</div>
-        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, Y. Wang, T. Zhang, L. Li, S. Song, <span class="title">Neuromorphic Graph Attention with Self-Distilled Multi-Objective Reinforcement Learning for Disease–related Metabolite Predictions</span>, <span class="venue">Neural Networks</span>, 2026.</div>
-        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, K. Wang, X. Zhang, L. Li, X. Qian, <span class="title">Multiscale Cross-Type Graph Neural Networks with Wavelet and Fourier Transforms for Direction-Aware Gene-Microbe-Disease Association Mining</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, W. Wang, Y. Cao, Z. Xu, W. Li, <span class="title">SAMF: Structure-constrained Attention and Hierarchical Multi-scale Fusion for Progressive Integration of Multi-slice Spatial Transcriptomics</span>, <span class="venue">Information Fusion</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, W. Wang, T. Zhang, L. Li, S. Song, <span class="title">Neuromorphic Graph Attention with Self-Distilled Multi-Objective Reinforcement Learning for Disease–related Metabolite Predictions</span>, <span class="venue">Neural Networks</span>, 2026.</div>
+        <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span><span class="me">Y. Guo</span>, W. Wang, X. Zhang, L. Li, X. Qian, <span class="title">Multiscale Cross-Type Graph Neural Networks with Wavelet and Fourier Transforms for Direction-Aware Gene-Microbe-Disease Association Mining</span>, <span class="venue">IEEE Transactions on Computational Biology and Bioinformatics</span>, 2026.</div>
         <div class="pub-item review" data-type="journal"><span class="badge r">Under Review</span>M. Huang, M. Zeng, N. Ma, <span class="me">Y. Guo</span>, S. Zhang, J. Cao, <span class="title">Heterogeneous graph representation and dual-view contrastive learning for drug-target binding affinity prediction</span>, <span class="venue">IEEE Transactions on Emerging Topics in Computational Intelligence</span>, 2026.</div>
       </div>
     </div>
@@ -604,7 +444,7 @@
     <div class="pub-group" data-year="2026">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2026</span>
+        <span class="g-year">2026年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -629,7 +469,7 @@
     <div class="pub-group" data-year="2025">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2025</span>
+        <span class="g-year">2025年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -646,7 +486,7 @@
     <div class="pub-group" data-year="2024">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2024</span>
+        <span class="g-year">2024年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -660,7 +500,7 @@
     <div class="pub-group" data-year="2023">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2023</span>
+        <span class="g-year">2023年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -675,7 +515,7 @@
     <div class="pub-group" data-year="2022">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2022</span>
+        <span class="g-year">2022年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -691,7 +531,7 @@
     <div class="pub-group" data-year="2021">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2021</span>
+        <span class="g-year">2021年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -706,7 +546,7 @@
     <div class="pub-group" data-year="2020">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2020</span>
+        <span class="g-year">2020年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -720,7 +560,7 @@
     <div class="pub-group" data-year="2019">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2019</span>
+        <span class="g-year">2019年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -732,7 +572,7 @@
     <div class="pub-group" data-year="2018">
       <div class="pub-group-head">
         <span class="g-dot"></span>
-        <span class="g-year">2018</span>
+        <span class="g-year">2018年成果</span>
         <span class="g-arrow">展开 ▾</span>
       </div>
       <div class="pub-group-body">
@@ -745,15 +585,24 @@
   <!-- ===== 5. SERVICE ===== -->
   <A NAME="Service"></A>
   <h2>🏛 Service</h2>
-  <div class="service-grid">
-    <div class="service-card"><span class="s-icon">📖</span>Academic Editor of <b>PLOS Computational Biology</b></div>
-    <div class="service-card"><span class="s-icon">🔬</span>Youth Editorial Board of <b>Cancer Innovation</b></div>
-    <div class="service-card"><span class="s-icon">📊</span>Youth Editorial Board of <b>Applied Mathematics and Statistics</b></div>
-    <div class="service-card"><span class="s-icon">🇨🇳</span><b>南方医科大学学报</b> — 青年编委</div>
-    <div class="service-card"><span class="s-icon">🧬</span><b>基因组学与应用生物学</b> — 青年编委</div>
-    <div class="service-card"><span class="s-icon">🤖</span>中国自动化学会智能健康与生物信息专业委员会委员</div>
-    <div class="service-card"><span class="s-icon">💻</span>中国计算机学会生物信息学专业委员会委员；科学普及工作委员会委员</div>
-    <div class="service-card"><span class="s-icon">🔗</span><a href="https://orcid.org/0000-0001-9532-2309" target="_blank">ORCID Profile</a></div>
+  <div id="service-list" class="fade-in">
+    <div class="pub-group" data-year="service">
+      <div class="pub-group-head">
+        <span class="g-dot"></span>
+        <span class="g-year">Service列表</span>
+        <span class="g-arrow">展开 ▾</span>
+      </div>
+      <div class="pub-group-body">
+        <div class="pub-item journal" data-type="service"><span class="badge j">Editor</span>Academic Editor of <span class="title">PLOS Computational Biology</span></div>
+        <div class="pub-item journal" data-type="service"><span class="badge j">Editor</span>Youth Editorial Board of <span class="title">Cancer Innovation</span></div>
+        <div class="pub-item journal" data-type="service"><span class="badge j">Editor</span>Youth Editorial Board of <span class="title">Applied Mathematics and Statistics</span></div>
+        <div class="pub-item chinese" data-type="service"><span class="badge cn">编委</span><span class="title">南方医科大学学报</span> — 青年编委</div>
+        <div class="pub-item chinese" data-type="service"><span class="badge cn">编委</span><span class="title">基因组学与应用生物学</span> — 青年编委</div>
+        <div class="pub-item conference" data-type="service"><span class="badge c">委员</span><span class="title">中国自动化学会智能健康与生物信息专业委员会委员</span></div>
+        <div class="pub-item conference" data-type="service"><span class="badge c">委员</span><span class="title">中国计算机学会生物信息学专业委员会委员；科学普及工作委员会委员</span></div>
+        <div class="pub-item review" data-type="service"><span class="badge r">链接</span><a href="https://orcid.org/0000-0001-9532-2309" target="_blank" class="title">ORCID Profile</a></div>
+      </div>
+    </div>
   </div>
 
   <!-- ===== FOOTER ===== -->
@@ -768,17 +617,23 @@
 <button id="back-top" title="Back to top">↑</button>
 
 <script>
-/* ===== 年份折叠 ===== */
+/* ===== 统一控制分组的展开/收起状态 ===== */
+function setGroupOpen(group, open){
+  const arrow = group.querySelector('.g-arrow');
+  group.classList.toggle('open', open);
+  if (arrow) arrow.textContent = open ? '收起 ▴' : '展开 ▾';
+}
+
+/* ===== 分组点击折叠 ===== */
 document.querySelectorAll('.pub-group').forEach(group => {
-  const head  = group.querySelector('.pub-group-head');
-  const arrow = head.querySelector('.g-arrow');
+  const head = group.querySelector('.pub-group-head');
+  if (!head) return;
   head.addEventListener('click', () => {
-    group.classList.toggle('open');
-    arrow.textContent = group.classList.contains('open') ? '收起 ▴' : '展开 ▾';
+    setGroupOpen(group, !group.classList.contains('open'));
   });
 });
 
-/* ===== 筛选 ===== */
+/* ===== 类型筛选（统一处理论文 / 项目 / 服务） ===== */
 const filterBtns = document.querySelectorAll('.filter-btn');
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
@@ -786,32 +641,43 @@ filterBtns.forEach(btn => {
     btn.classList.add('active');
     const filter = btn.dataset.filter;
 
+    // 1) 先处理每个分组的显隐与展开状态
     document.querySelectorAll('.pub-group').forEach(group => {
       const items = group.querySelectorAll('.pub-item');
       let visible = 0;
+
       items.forEach(item => {
-        const match = (filter === 'all' || item.dataset.type === filter);
+        const match = (filter === 'all') || (item.dataset.type === filter);
         item.style.display = match ? '' : 'none';
         if (match) visible++;
       });
-      const arrow = group.querySelector('.g-arrow');
+
       if (visible === 0) {
         group.style.display = 'none';
+        setGroupOpen(group, false);
       } else {
         group.style.display = '';
-        if (filter === 'all') {
-          group.classList.remove('open');
-          arrow.textContent = '展开 ▾';
-        } else {
-          group.classList.add('open');
-          arrow.textContent = '收起 ▴';
-        }
+        // All 时全部收起；筛选具体类型时自动展开
+        setGroupOpen(group, filter !== 'all');
       }
+    });
+
+    // 2) 关键修复：确保包含可见分组的 .fade-in 容器立即显示
+    //    避免其从未进入视口、IntersectionObserver 未触发时仍为 opacity:0
+    document.querySelectorAll('.fade-in').forEach(el => {
+      const groups = el.querySelectorAll('.pub-group');
+      if (groups.length === 0) {
+        // 非分组容器（profile / note / filter-bar）直接显示
+        el.classList.add('visible');
+        return;
+      }
+      const anyVisible = Array.from(groups).some(g => g.style.display !== 'none');
+      if (anyVisible) el.classList.add('visible');
     });
   });
 });
 
-/* ===== Scroll to top ===== */
+/* ===== 返回顶部 ===== */
 const backTop = document.getElementById('back-top');
 window.addEventListener('scroll', () => {
   backTop.style.display = window.scrollY > 400 ? 'flex' : 'none';
@@ -820,7 +686,7 @@ backTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* ===== Fade-in on scroll ===== */
+/* ===== 滚动淡入 ===== */
 const fadeEls = document.querySelectorAll('.fade-in');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
