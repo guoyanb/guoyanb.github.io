@@ -231,8 +231,12 @@
     pointer-events:none;
   }
   .profile img{
-    width:180px;
+    width:auto;
+    max-width:180px;      /* 横向照片最大宽度 */
+    max-height:240px;     /* 纵向照片最大高度，避免过长 */
     height:auto;
+    display:block;
+    object-fit:contain;   /* 保持原始宽高比，不裁剪不拉伸 */
     flex-shrink:0;
     border-radius:14px;
     border:3px solid transparent;
@@ -615,7 +619,13 @@
   /* ===== Responsive ===== */
   @media(max-width:640px){
     .profile{flex-direction:column;align-items:center;text-align:center;padding:22px;}
-    .profile img{width:160px;}
+    .profile img{
+      max-width:150px;
+      max-height:200px;
+      width:auto;
+      height:auto;
+      margin:0 auto;      /* 居中（移动端 profile 已设为 column 布局） */
+    }
     .topic-list li{text-align:left;}
     .pub-group-head{padding:14px 16px;gap:10px;}
     .g-year{font-size:16.5px;}
